@@ -1,0 +1,284 @@
+> fa.parallel(mydata,fa="pc")
+Parallel analysis suggests that the number of factors =  NA  and the number of components =  2 
+
+> scree(mydata)
+2 componenten
+
+> VSS(mydata,rotate="promax", fm="pc")
+
+Very Simple Structure
+Call: vss(x = x, n = n, rotate = rotate, diagonal = diagonal, fm = fm, 
+          n.obs = n.obs, plot = plot, title = title)
+VSS complexity 1 achieves a maximimum of 0.94  with  1  factors
+VSS complexity 2 achieves a maximimum of 0.7  with  2  factors
+
+The Velicer MAP achieves a minimum of 0.02  with  4  factors 
+
+#Hauptkomponentenanalyse mit einem Faktor
+> fit <- principal(mydata, nfactors=1, rotate="none")
+> fit
+Principal Components Analysis
+Call: principal(r = mydata, nfactors = 1, rotate = "none")
+Standardized loadings (pattern matrix) based upon correlation matrix
+          PC1   h2   u2
+gespr8.1 0.76 0.58 0.42
+anspr8.2 0.75 0.56 0.44
+ofohr8.3 0.66 0.44 0.56
+austs8.4 0.79 0.63 0.37
+infrm8.5 0.77 0.59 0.41
+etwgs8.6 0.73 0.53 0.47
+ptner8.7 0.73 0.53 0.47
+ausef8.8 0.81 0.66 0.34
+auflt8.9 0.52 0.27 0.73
+mitw8.10 0.71 0.50 0.50
+eamt8.11 0.55 0.30 0.70
+hosp8.12 0.71 0.50 0.50
+pdar8.13 0.78 0.61 0.39
+eins8.14 0.82 0.68 0.32
+besw8.15 0.77 0.59 0.41
+ents8.16 0.75 0.57 0.43
+eazf8.17 0.75 0.56 0.44
+ifpd8.18 0.73 0.54 0.46
+betl8.19 0.70 0.50 0.50
+
+                PC1
+SS loadings    10.15
+Proportion Var  0.53
+
+Test of the hypothesis that 1 component is sufficient.
+
+The degrees of freedom for the null model are  171  and the objective function was  13.39
+The degrees of freedom for the model are 152  and the objective function was  2.57 
+The total number of observations was  2579  with MLE Chi Square =  6597.21  with prob <  0 
+
+Fit based upon off diagonal values = 0.98
+
+#Rotiert
+> fit <- principal(mydata, nfactors=1, rotate="promax")
+> fit
+Principal Components Analysis
+Call: principal(r = mydata, nfactors = 1, rotate = "promax")
+Standardized loadings (pattern matrix) based upon correlation matrix
+          PC1   h2   u2
+gespr8.1 0.76 0.58 0.42
+anspr8.2 0.75 0.56 0.44
+ofohr8.3 0.66 0.44 0.56
+austs8.4 0.79 0.63 0.37
+infrm8.5 0.77 0.59 0.41
+etwgs8.6 0.73 0.53 0.47
+ptner8.7 0.73 0.53 0.47
+ausef8.8 0.81 0.66 0.34
+auflt8.9 0.52 0.27 0.73
+mitw8.10 0.71 0.50 0.50
+eamt8.11 0.55 0.30 0.70
+hosp8.12 0.71 0.50 0.50
+pdar8.13 0.78 0.61 0.39
+eins8.14 0.82 0.68 0.32
+besw8.15 0.77 0.59 0.41
+ents8.16 0.75 0.57 0.43
+eazf8.17 0.75 0.56 0.44
+ifpd8.18 0.73 0.54 0.46
+betl8.19 0.70 0.50 0.50
+
+                PC1
+SS loadings    10.15
+Proportion Var  0.53
+
+Test of the hypothesis that 1 component is sufficient.
+
+The degrees of freedom for the null model are  171  and the objective function was  13.39
+The degrees of freedom for the model are 152  and the objective function was  2.57 
+The total number of observations was  2579  with MLE Chi Square =  6597.21  with prob <  0 
+
+Fit based upon off diagonal values = 0.98
+
+#Rotierte und unrotierte zeigen das selbe Ergebniss bei einer Hauptkomponente
+
+#Hauptkomponentenanalyse mit 2 Faktoren
+
+# Nicht Rotiert
+> fit2 <- principal(mydata, nfactors=2, rotate="none")
+> fit2
+Principal Components Analysis
+Call: principal(r = mydata, nfactors = 2, rotate = "none")
+Standardized loadings (pattern matrix) based upon correlation matrix
+          PC1   PC2   h2   u2
+gespr8.1 0.76 -0.33 0.69 0.31
+anspr8.2 0.75 -0.24 0.62 0.38
+ofohr8.3 0.66  0.12 0.46 0.54
+austs8.4 0.79 -0.28 0.71 0.29
+infrm8.5 0.77 -0.35 0.71 0.29
+etwgs8.6 0.73 -0.28 0.61 0.39
+ptner8.7 0.73 -0.26 0.60 0.40
+ausef8.8 0.81 -0.27 0.73 0.27
+auflt8.9 0.52  0.05 0.27 0.73
+mitw8.10 0.71  0.38 0.65 0.35
+eamt8.11 0.55  0.54 0.59 0.41
+hosp8.12 0.71  0.30 0.59 0.41
+pdar8.13 0.78  0.04 0.61 0.39
+eins8.14 0.82 -0.03 0.68 0.32
+besw8.15 0.77  0.00 0.59 0.41
+ents8.16 0.75  0.12 0.58 0.42
+eazf8.17 0.75  0.23 0.62 0.38
+ifpd8.18 0.73  0.23 0.59 0.41
+betl8.19 0.70  0.32 0.60 0.40
+
+                        PC1  PC2
+SS loadings           10.15 1.35
+
+Proportion Var         0.53 0.07
+Cumulative Var         0.53 0.61
+Proportion Explained   0.88 0.12
+Cumulative Proportion  0.88 1.00
+
+Test of the hypothesis that 2 components are sufficient.
+
+The degrees of freedom for the null model are  171  and the objective function was  13.39
+The degrees of freedom for the model are 134  and the objective function was  1.85 
+The total number of observations was  2579  with MLE Chi Square =  4761.43  with prob <  0 
+
+Fit based upon off diagonal values = 0.99
+
+#Rotiert
+> fit2 <- principal(mydata, nfactors=2, rotate="promax")
+> fit2
+Principal Components Analysis
+Call: principal(r = mydata, nfactors = 2, rotate = "promax")
+Standardized loadings (pattern matrix) based upon correlation matrix
+          PC1   PC2   h2   u2
+gespr8.1  0.90 -0.10 0.69 0.31
+anspr8.2  0.78  0.02 0.62 0.38
+ofohr8.3  0.24  0.48 0.46 0.54
+austs8.4  0.85 -0.01 0.71 0.29
+infrm8.5  0.93 -0.12 0.71 0.29
+etwgs8.6  0.81 -0.04 0.61 0.39
+ptner8.7  0.79 -0.02 0.60 0.40
+ausef8.8  0.85  0.00 0.73 0.27
+auflt8.9  0.25  0.31 0.27 0.73
+mitw8.10 -0.08  0.86 0.65 0.35
+eamt8.11 -0.39  1.00 0.59 0.41
+hosp8.12  0.02  0.75 0.59 0.41
+pdar8.13  0.42  0.42 0.61 0.39
+eins8.14  0.54  0.34 0.68 0.32
+besw8.15  0.47  0.36 0.59 0.41
+ents8.16  0.29  0.52 0.58 0.42
+eazf8.17  0.15  0.67 0.62 0.38
+ifpd8.18  0.13  0.66 0.59 0.41
+betl8.19  0.00  0.77 0.60 0.40
+
+                      PC1  PC2
+SS loadings           6.37 5.13
+Proportion Var        0.34 0.27
+Cumulative Var        0.34 0.61
+Proportion Explained  0.55 0.45
+Cumulative Proportion 0.55 1.00
+
+With component correlations of 
+    PC1  PC2
+PC1 1.00 0.73
+PC2 0.73 1.00
+
+Test of the hypothesis that 2 components are sufficient.
+
+The degrees of freedom for the null model are  171  and the objective function was  13.39
+The degrees of freedom for the model are 134  and the objective function was  1.85 
+The total number of observations was  2579  with MLE Chi Square =  4761.43  with prob <  0 
+
+#Hauptkomponentenanalyse mit 4 Faktoren
+#Nicht rotiert
+> fit3 <- principal(mydata, nfactors=4, rotate="none")
+> fit3
+Principal Components Analysis
+Call: principal(r = mydata, nfactors = 4, rotate = "none")
+Standardized loadings (pattern matrix) based upon correlation matrix
+          PC1   PC2   PC3   PC4   h2   u2
+gespr8.1 0.76 -0.33 -0.03  0.23 0.74 0.26
+anspr8.2 0.75 -0.24  0.01  0.41 0.79 0.21
+ofohr8.3 0.66  0.12  0.03  0.45 0.66 0.34
+austs8.4 0.79 -0.28 -0.02  0.26 0.78 0.22
+infrm8.5 0.77 -0.35  0.01 -0.04 0.72 0.28
+etwgs8.6 0.73 -0.28 -0.07  0.05 0.62 0.38
+ptner8.7 0.73 -0.26  0.19 -0.33 0.74 0.26
+ausef8.8 0.81 -0.27  0.17 -0.25 0.83 0.17
+auflt8.9 0.52  0.05  0.33 -0.28 0.46 0.54
+mitw8.10 0.71  0.38  0.18  0.07 0.68 0.32
+eamt8.11 0.55  0.54  0.38  0.14 0.75 0.25
+hosp8.12 0.71  0.30  0.36  0.06 0.72 0.28
+pdar8.13 0.78  0.04 -0.04 -0.13 0.63 0.37
+eins8.14 0.82 -0.03  0.07 -0.23 0.74 0.26
+besw8.15 0.77  0.00 -0.03  0.02 0.59 0.41
+ents8.16 0.75  0.12 -0.14 -0.14 0.62 0.38
+eazf8.17 0.75  0.23 -0.41 -0.09 0.79 0.21
+ifpd8.18 0.73  0.23 -0.40 -0.17 0.78 0.22
+betl8.19 0.70  0.32 -0.40  0.00 0.75 0.25
+
+                        PC1  PC2  PC3  PC4
+SS loadings           10.15 1.35 1.00 0.90
+Proportion Var         0.53 0.07 0.05 0.05
+Cumulative Var         0.53 0.61 0.66 0.71
+Proportion Explained   0.76 0.10 0.07 0.07
+Cumulative Proportion  0.76 0.86 0.93 1.00
+
+Test of the hypothesis that 4 components are sufficient.
+
+The degrees of freedom for the null model are  171  and the objective function was  13.39
+The degrees of freedom for the model are 101  and the objective function was  1.09 
+The total number of observations was  2579  with MLE Chi Square =  2802.73  with prob <  0 
+
+Fit based upon off diagonal values = 0.99
+
+#Rotiert 
+Fit based upon off diagonal values = 0.99
+> fit3 <- principal(mydata, nfactors=4, rotate="promax")
+> fit3
+Principal Components Analysis
+Call: principal(r = mydata, nfactors = 4, rotate = "promax")
+Standardized loadings (pattern matrix) based upon correlation matrix
+          PC3   PC4   PC1   PC2   h2   u2
+gespr8.1 -0.04  0.80  0.19 -0.10 0.74 0.26
+anspr8.2 -0.11  0.95 -0.05  0.08 0.79 0.21
+ofohr8.3  0.06  0.69 -0.35  0.43 0.66 0.34
+austs8.4 -0.03  0.81  0.14 -0.02 0.78 0.22
+infrm8.5  0.01  0.48  0.54 -0.18 0.72 0.28
+etwgs8.6  0.11  0.53  0.33 -0.16 0.62 0.38
+ptner8.7 -0.09  0.04  0.92 -0.05 0.74 0.26
+ausef8.8 -0.08  0.17  0.86 -0.03 0.83 0.17
+auflt8.9 -0.15 -0.22  0.69  0.33 0.46 0.54
+mitw8.10  0.18  0.02  0.05  0.65 0.68 0.32
+eamt8.11 -0.06 -0.07 -0.07  0.97 0.75 0.25
+hosp8.12 -0.10  0.07  0.21  0.74 0.72 0.28
+pdar8.13  0.36  0.08  0.37  0.09 0.63 0.37
+eins8.14  0.21  0.03  0.61  0.10 0.74 0.26
+besw8.15  0.26  0.29  0.22  0.12 0.59 0.41
+ents8.16  0.54  0.00  0.25  0.07 0.62 0.38
+eazf8.17  0.96 -0.01 -0.05 -0.06 0.79 0.21
+ifpd8.18  0.99 -0.12  0.04 -0.09 0.78 0.22
+betl8.19  0.96  0.01 -0.21  0.06 0.75 0.25
+
+                      PC3  PC4  PC1  PC2
+SS loadings           3.42 3.78 3.79 2.42
+Proportion Var        0.18 0.20 0.20 0.13
+Cumulative Var        0.18 0.38 0.58 0.71
+Proportion Explained  0.26 0.28 0.28 0.18
+Cumulative Proportion 0.26 0.54 0.82 1.00
+
+With component correlations of 
+    PC3  PC4  PC1  PC2
+PC3 1.00 0.68 0.68 0.63
+PC4 0.68 1.00 0.67 0.54
+PC1 0.68 0.67 1.00 0.56
+PC2 0.63 0.54 0.56 1.00
+
+Test of the hypothesis that 4 components are sufficient.
+
+The degrees of freedom for the null model are  171  and the objective function was  13.39
+The degrees of freedom for the model are 101  and the objective function was  1.09 
+The total number of observations was  2579  with MLE Chi Square =  2802.73  with prob <  0 
+
+Fit based upon off diagonal values = 0.99
+
+#Mittelwert der Skala Zusammenarbeit mit Familien
+> mean(mydata$Zusammenarbeit.vektor, na.rm=TRUE)
+[1] 3.193173
+> var(mydata$Zusammenarbeit.vektor, na.rm=TRUE)
+[1] 0.4935195
