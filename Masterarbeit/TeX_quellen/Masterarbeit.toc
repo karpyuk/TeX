@@ -1,0 +1,27 @@
+\select@language {german}
+\contentsline {section}{\numberline {1}Einleitung}{1}
+\contentsline {section}{\numberline {2}Geschichtlicher R\IeC {\"u}ckblick auf die Entwicklung von Erziehungs- und Bildungspartnerschaften mit Eltern}{3}
+\contentsline {section}{\numberline {3}Rechtliche Grundlagen und Rahmenrichtlinien der Bundesl\IeC {\"a}nder zur F\IeC {\"o}rderung der Erziehungs- und Bildungspartnerschaften}{7}
+\contentsline {section}{\numberline {4}Gr\IeC {\"u}nde f\IeC {\"u}r eine Erziehungs- und Bildungspartnerschaft}{9}
+\contentsline {subsection}{\numberline {4.1}Ver\IeC {\"a}nderte Lebenslagen von Familien}{9}
+\contentsline {subsection}{\numberline {4.2}Steigende Anforderungen an die Erzieher/-innen}{11}
+\contentsline {subsection}{\numberline {4.3}Eine enge Zusammenarbeit mit den Eltern als Voraussetzung f\IeC {\"u}r den Erfolg der F\IeC {\"o}rder- und Pr\IeC {\"a}ventionsprogramme in den Kinderg\IeC {\"a}rten}{13}
+\contentsline {subsection}{\numberline {4.4}\IeC {\"O}kosystemischer Ansatz nach Bronfenbrenner}{14}
+\contentsline {section}{\numberline {5}Empirische Forschungsergebnisse}{17}
+\contentsline {subsection}{\numberline {5.1}Erwartungen der Eltern an die Zusammenarbeit mit Kindertageseinrichtungen}{18}
+\contentsline {subsection}{\numberline {5.2}Elternzufriedenheit und Partizipation der Eltern}{18}
+\contentsline {section}{\numberline {6}Methodisches Vorgehen}{1}
+\contentsline {subsection}{\numberline {6.1}Datengrundlage und Stichprobe}{1}
+\contentsline {subsection}{\numberline {6.2}Instrument der Erhebung}{2}
+\contentsline {section}{\numberline {7}Ergebnisse}{3}
+\contentsline {subsection}{\numberline {7.1}Deskriptiv-statistische Beschreibung der Daten}{3}
+\contentsline {subsection}{\numberline {7.2}H\IeC {\"a}ufigkeiten}{4}
+\contentsline {subsubsection}{\numberline {7.2.1}Korrelationsanalyse}{5}
+\contentsline {section}{\numberline {8}Exploratorische Faktorenanalyse}{6}
+\contentsline {subsection}{\numberline {8.1}\IeC {\"U}berpr\IeC {\"u}fung der Dateneignung f\IeC {\"u}r eine Faktorenanalyse}{6}
+\contentsline {subsection}{\numberline {8.2}Methoden der Faktorenextraktion}{7}
+\contentsline {subsection}{\numberline {8.3}Kriterien f\IeC {\"u}r die Anpassungsg\IeC {\"u}te der Modelle}{9}
+\contentsline {subsection}{\numberline {8.4}Faktorladungen}{11}
+\contentsline {section}{Literaturverzeichnis}{13}
+\contentsline {section}{Anhang}{14}
+\contentsline {section}{\numberline {A}}{14}
