@@ -1,18 +1,27 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[german]{babel}
+\usepackage[english, ngerman]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage[numbers,round]{natbib}
 \usepackage[section]{placeins}
 \usepackage{url}
-\usepackage{times}
+%\usepackage{times}
 \usepackage{hyperref}
 \usepackage{tabularx}
-\author{}
-\title{  }
+\usepackage{flafter}
+\usepackage{apager}
+\usepackage[font=small]{caption}
+\captionsetup[figure]{labelfont=it, labelsep=period}
+\captionsetup[table]{textfont=it,singlelinecheck=false,labelsep=newline,format=plain,justification=justified}
+\usepackage[a4paper,top=3cm,bottom=3cm,left=3cm,right=4cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+\author{Iryna Karpyuk \\
+Matrikelnummer: 4222981}
+\title{Die Einschätzung der Erziehungs- und Bildungspartnerschaft zwischen pädagogischen Fachkräften und Familien durch die Eltern am Beispiel der FRÖBEL-Kindertageseinrichtungen}
 \begin{document}
 \begin{titlepage}
 
@@ -27,15 +36,19 @@ Masterarbeit im Masterstudiengang Bildungswissenschaft
 \vspace{30pt}
 
 \begin{center}
-\huge
-Die Einschätzung der Erziehungs- und Bildungspartnerschaft zwischen pädagogischen Fachkräften und Familien durch die Eltern am Beispiel der FRÖBEL-Kindertageseinrichtungen\\  
+%\fontfamily{phv}\selectfont{
+\LARGE{%\bfseries{
+Die Einschätzung der Erziehungs- und Bildungspartnerschaft zwischen pädagogischen Fachkräften und Familien durch die Eltern am Beispiel der FRÖBEL-Kindertageseinrichtungen
+}%}%}
+\\  
 \vspace{50pt}
  \end{center}
                          
 \normalsize  
 \begin{center}
 Erstgutachterin:  Prof. Dr. Yvonne Anders\\
-Zweitgutachterin:  Dr. Axinja Hachfeld                             \\
+Zweitgutachterin:  Dr. Axinja Hachfeld\\
+\vspace{10pt}
 Vorgelegt von\\ 
 Iryna Karpyuk \\
 Matrikelnummer: 4222981\\
@@ -46,22 +59,38 @@ Wörter im Textteil: [Anzahl Wörter]\\
 \normalsize
 \vspace{150pt}
 
-Berlin, Abgabedatum
+Berlin, 9.Feb.2015
 \end{center}
 \end{titlepage}
 \normalsize                                              
 \pagebreak
 
+%\maketitle
+
 \begin{abstract}
-
-
+This thesis deals with the partnership in upbringing and education between
+pedagogues and parents in the FRÖBEL kindergarden institutions. This study
+investigates the question which homogenous dimensions emerge from the sub scale
+``collaboration with parents'' and how the cooperation between the pedagogues
+and the families is evaluated by the parents.
+The basis of this work are 2579 questionaires given to parents in which the
+families could asses the cooperation.
+The results illustrate that the majority of the parents expressed satisfaction
+with the collaboration between the pedagogues and the families in the FRÖBEL
+kindergarten institutions. Additionally one dimension ``collaboration with
+parents'' was extracted in the data structure by exploritatory factor analysis.
+%Die vorliegende Arbeit beschäftigt sich mit der Erziehungs- und Bildungspartnerschaft zwischen den pädagogischen Fachkräften und Eltern in den FRÖBEL-Kindertageseinrichtungen. Die Studie geht der Frage nach, welche homogenen Dimensionen sich in der Subskala „Zusammenarbeit mit Familien“ herausbilden lassen und wie die Kooperation zwischen den pädagogischen Fachkräften und den Familien aus der Sicht der Eltern beurteilt wird.
+%Die Datengrundlage bilden 2579 Elternfragebögen, anhand deren Eltern die Möglichkeit bekommen haben, die Zusammenarbeit einzuschätzen.
+%Die Befunde veranschaulichen, dass sich die Mehrheit der Eltern positiv bezüglich der Zusammenarbeit zwischen pädagogischen Fachkräften und Familien in den FRÖBEL-Einrichtungen äußerten. Weiterhin ließ sich in der Datenstruktur mittels der exploratorischen Faktorenanalyse eine Dimension „Zusammenarbeit mit Familien“ herausbilden.
 \end{abstract}
 
 \pagebreak
 
 \tableofcontents
-\begin{tiny}
-\end{tiny}
+\pagebreak
+\listoffigures
+\pagebreak
+\listoftables
 \pagebreak
 
 \begin{titlepage}
@@ -246,7 +275,7 @@ Nach dem sozial-ökologischen Modell lassen sich folgende Ökosysteme differenzi
 \centering
 \includegraphics[scale=0.6]{figures/OekosystemBronfenbrenner}
 \label{fig_bronf}
-\caption{Die Systemebenen des Ökosystems bei Bronfenbrenner (\url{http://de.wikipedia.org/wiki/Oekosystemischer_Ansatz_nach_Bronfenbrenner}, unter GNU-FDL CC BY-SA 3.0).}
+\caption{Die Systemebenen des Ökosystems bei Bronfenbrenner (\href{https://de.wikipedia.org/wiki/Datei:\%C3\%96kosystemBronfenbrenner.jpg}{Wikipedia.org}, unter GNU-FDL CC BY-SA 3.0).}
 \end{figure}
 
  \begin{quote}
@@ -344,7 +373,7 @@ Um den ersten Eindruck über die vorliegenden empirischen Daten (20 Items der Su
 
 \begin{table}[h]
 \label{tab_mean}
-\caption{\textit{Einschätzungen der Zusammenarbeit zwischen pädagogischen Fachkräften und Familien durch die Eltern: Mittelwerte (M), Standardabweichungen (SD)}}
+\caption{Einschätzungen der Zusammenarbeit zwischen pädagogischen Fachkräften und Familien durch die Eltern: Mittelwerte (M), Standardabweichungen (SD)}
 \begin{tabularx}{\textwidth}{Xll}
 \hline 
 Items&
@@ -453,7 +482,7 @@ Im Folgenden werden einige ausgewählte Häufigkeitsergebnisse präsentiert. Die
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.6]{figures/freq_dist2}
+\includegraphics[scale=0.65]{figures/freq_dist3}
 \caption{Bewertung der Zusammenarbeit zwischen pädagogischen Fachkräften und Familien durch die Eltern in FRÖBEL-Kindertageseinrichtungen 2013 (in \%).}
 \label{fig_freq}
 \end{figure}
@@ -480,6 +509,7 @@ Bevor ein faktorenanalytisches Modell spezifiziert wird, wird zunächst mittels 
 
 
 \begin{table}
+\centering
 \caption{KMO und Barlett-Test Koeffizienten}
 \label{tab_KMO}
 \begin{tabular}{lcl}
@@ -505,16 +535,25 @@ Im nächsten Schritt wird entschieden, wie viele Faktoren erforderlich sind, um 
 
 	Um die optimale Anzahl der Faktoren in der vorliegenden Hauptkomponentenanalyse festzustellen, werden der \textit{Scree-Test} nach Cattell, die \textit{Parallelanalyse} nach Horn, die \textit{Very Simple Structure-Methode (VSS)} und der \textit{Minimum-Avarage-Partial-Test (MAP)} angewandt. Aufgrund der starken Kritik am \textit{Kaiser-Kriterium} wurde dieses bei der Bestimmung der Hauptkomponenten nicht berücksichtigt. Die Kritik bezog sich auf die Festlegung der Grenze von $>1$ und die Ergebnisse bisheriger Studien, die gezeigt haben, dass dieses Kriterium als Extraktionsmethode in den meisten Fällen ungeeignet ist (Fabriger et.al 1999; zitiert nach Eid et al., 2013, S. 913).
 	
-	Im Folgenden wird die Durchführung der ausgewählten Extraktionsmethoden samt den gewonnenen Ergebnissen beschrieben. Zuerst wurde der \textit{Scree-Plot} analysiert. Hier wurde geschaut, an welcher Stelle ein bedeutsamer Eigenwertabfall vorkommt und in der Regel nur die Eigenwerte vor dem Knick mitgezählt. In der unten stehenden Abbildung ist ein Knick zwischen dem ersten und dem zweiten Eigenwert zu erkennen. Der zweite Faktor weist einen deutlich kleineren Eigenwert auf als der erste. Die restlichen Eigenwerte verlaufen ab dem zweiten Faktor gleichmäßig flach hin zu der $X$-Achse.
+	Im Folgenden wird die Durchführung der ausgewählten Extraktionsmethoden samt den gewonnenen Ergebnissen beschrieben. Zuerst wurde der \textit{Scree-Plot} analysiert. Hier wurde geschaut, an welcher Stelle ein bedeutsamer Eigenwertabfall vorkommt und in der Regel nur die Eigenwerte vor dem Knick mitgezählt. In der unten stehenden Abbildung~\ref{fig_scree} ist ein Knick zwischen dem ersten und dem zweiten Eigenwert zu erkennen. Der zweite Faktor weist einen deutlich kleineren Eigenwert auf als der erste. Die restlichen Eigenwerte verlaufen ab dem zweiten Faktor gleichmäßig flach hin zu der $X$-Achse.
 	
-\textit{Abbildung 3.} Scree-Plot (In der Legende sind die Eigenwertverläufe der Hauptkomponentenanalyse (PC) sowie der Faktorenanalyse (FA) dargestellt).
-
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{../R-Berechnungen/Rplot.pdf}
+\caption{Scree-Plot (In der Legende sind die Eigenwertverläufe der Hauptkomponentenanalyse (PC) sowie der Faktorenanalyse (FA) dargestellt).}
+\label{fig_scree}
+\end{figure}
 									
 Aus dem \textit{Scree-Plot} wird deutlich, dass es möglich wäre, entweder eine oder zwei Komponenten zu extrahieren. Somit liefert der Test keine eindeutige Lösung, denn für die weiteren Analysen ist ein klares Ergebnis erforderlich.
 
-	Deswegen wurde als weitere Hilfe zur Bestimmung der relevanten Hauptkomponenten die \textit{Parallelanalyse} nach Horn hinzugezogen. Nach Bühner gilt diese als die beste Extraktionsmethode und sollte den anderen Methoden vorgezogen werden. Bei der durchgeführten \textit{Parallelanalyse} wurden die beobachteten Eigenwerte mit den Eigenwerten verglichen, die bei einer Faktorenanalyse mit Zufallsdaten erwartet werden. Es wurden dann nur die Faktoren extrahiert, deren Eigenwerte größer sind als die zufälligen Eigenwerte. Das Ergebnis der vorgenommenen \textit{Parallelanalyse} ist mit dem Ergebnis des \textit{Scree-Plot-Tests} identisch: man könnte entweder einen oder zwei Faktoren zur Extraktion festlegen. Somit wurde wieder kein eindeutiges Ergebnis erziehlt.
+	Deswegen wurde als weitere Hilfe zur Bestimmung der relevanten Hauptkomponenten die \textit{Parallelanalyse} nach Horn hinzugezogen. Nach Bühner gilt diese als die beste Extraktionsmethode und sollte den anderen Methoden vorgezogen werden. Bei der durchgeführten \textit{Parallelanalyse} wurden die beobachteten Eigenwerte mit den Eigenwerten verglichen, die bei einer Faktorenanalyse mit Zufallsdaten erwartet werden. Es wurden dann nur die Faktoren extrahiert, deren Eigenwerte größer sind als die zufälligen Eigenwerte. Das Ergebnis der vorgenommenen \textit{Parallelanalyse} ist mit dem Ergebnis des \textit{Scree-Plot-Tests} identisch: man könnte entweder einen oder zwei Faktoren zur Extraktion festlegen (siehe Abbildung~\ref{fig_para}). Somit wurde wieder kein eindeutiges Ergebnis erzielt.
 
-\textit{Abbildung 4.} Parallelanalyse.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.75]{../R-Berechnungen/Rplot02.pdf}
+\caption{Parallelanalyse.}
+\label{fig_para}
+\end{figure}
 
 Ferner wird ein weiterer Test, der \textit{Very Simple Structure-Test (VSS)}, angewandt. Er drückt aus, wie gut eine vereinfachte Faktorenmatrix die vollständige Faktorenmatrix reproduziert. Dabei können die Werte zwischen $0$ und $1$ liegen. Der Test hat folgendes ergeben:
 \begin{verbatim}
@@ -591,9 +630,15 @@ Die Analyse hat also ergeben, dass das Vier-Faktor-Modell die Datenstruktur am b
 	Oben wurde bereits ermittelt, dass der Alpha-Koeffizient der Gesamtitemskala bei $\alpha$ $= .899$ liegt. Dieser Wert deutet ganz explizit auf eine einfaktorielle Struktur des Fragebogens hin. Genauso zeigt die starke Korrelation der Variablen, dass wenige Faktoren notwendig sind, um den ursprünglichen Informationsgehalt des Fragebogens zu erhalten. Außerdem sollte nach Bühner (2006) unabhängig von den ausgewählten Extraktionskriterien eine Anzahl von Faktoren extrahiert werden, die sich inhaltlich verständlich interpretieren lässt (Bühner, 2006, S. 202). Zudem besteht in dem Zwei- Faktor-Modell wie auch im vierfaktoriellen Modell eine hohe Korrelation zwischen den Faktoren. Die Faktoren des Zwei-Faktor-Modells korrelieren mit $r = .73$ stark miteinander. Das bedeutet, dass sie zu einem Faktor zusammengefasst werden können. Demzufolge und unter der Berücksichtigung des Grundprinzips der Hauptkomponentenanalyse und des Reliabilität-Gesichtspunktes sowie der gleichmäßig hoch untereinander korrelierenden Faktoren, wird schließlich ein Ein-Faktor-Modell gewählt.
 
 \subsubsection{Faktorladungen}
-Nachdem die Entscheidung über die Anzahl der zu extrahierenden Faktoren gefallen ist und schließlich ein Faktor extrahiert wurde, werden im weiteren Schritt die Ladungen auf dem Faktor analysiert. Die einfaktorielle Lösung ist in der Abbildung 4 dargestellt.
+Nachdem die Entscheidung über die Anzahl der zu extrahierenden Faktoren gefallen ist und schließlich ein Faktor extrahiert wurde, werden im weiteren Schritt die Ladungen auf dem Faktor analysiert. Die einfaktorielle Lösung ist in der Abbildung~\ref{fig_fak} dargestellt.
 
-\textit{Abbildung 4.} Faktorstruktur der Einschätzung der Zusammenarbeit zwischen den pädagogischen Fachkräften und Familien in den FRÖBEL-Kinder\-tages\-ein\-rich\-tungen durch die Eltern.
+\begin{figure}[h]
+\centering
+%\includegraphics[scale=1]{../R-Berechnungen/.pdf}
+\caption{Faktorstruktur der Einschätzung der Zusammenarbeit zwischen den pädagogischen Fachkräften und Familien in den FRÖBEL-Kinder\-tages\-ein\-rich\-tungen durch die Eltern.}
+\label{fig_fak}
+\end{figure}
+
 
 8.14 Die ErzieherInnen interessieren sich für meine Einschätzung
         ihrer Arbeit                                                                                            0.82
@@ -701,11 +746,18 @@ Ferner lassen sich leider keine Rückschlüsse auf den Bildungsstand der Eltern,
 	Für die weitere Forschung wäre ferner interessant zu schauen, ob es Unterschiede in  der Zusammenarbeit zwischen Eltern mit und ohne Migrationshintergrund gibt? Inwieweit zeigen sich die Unterschiede bzw. die Zusammenhänge in der Beurteilung der Zusammenarbeit mit Familien durch die Eltern in verschiedenen Bundesländern?  Die aktuellste Studie, die sich mit der Zufriedenheit der Eltern mit der Zusammenarbeit zwischen Familien und Kindertageseinrichtungen nach den östlichen und westlichen Bundesländern befasst hat, wurde im Jahr 2002 durchgeführt und ist somit schon recht veraltet. Außerdem wäre es wichtig zu untersuchen, welche Faktoren für die Einschätzung der Zusammenarbeit mit Familien eine signifikante Rolle spielen. Auch weitere Studien zu den Effekten der engen Zusammenarbeit auf die Entwicklung der Kinder wären notwendig.
 	
 	Abschließend soll festgehalten werden, dass die vorwiegend positive Bewertung der Zusammenarbeit innerhalb der Befragung eine Bestätigung der erfolgreichen Arbeit der FRÖBEL-Einrichtungen im Bereich der Bildungs- und Erziehungspartnerschaft mit den Eltern gibt. Die durchgeführte Befragung des Trägers zeigt seine Bereitschaft, Feedback anzunehmen und sich stetig weiter zu entwickeln. Diese Bereitschaft sollte unterstützt und wissenschaftlich weiter begleitet werden. Denn obschon das Thema "`Erziehungs- und Bildungspartnerschaft"' zwischen Familien und Kindertageseinrichtungen inzwischen öffentlich diskutiert wird, gibt es nach wie vor viele Einrichtungen, die den Eltern in ihrer Mitbestimmung wenig Bedeutung und Raum zugestehen. Dabei sollte man nicht aus den Augen verlieren, dass die Eltern die Experten ihrer Kinder und gerade in den ersten Lebensjahren des Kindes seine engsten Bezugspersonen sind. Ein solches Umfrageergebnis ist ein erster Schritt hin zu einer objektiven Bewertung durch die Eltern, aber auch für die Eltern.
-	
-\bibliographystyle{alphadin} 
-\bibliography{Forschungsbericht}
-\section*{Literaturverzeichnis}
-\addcontentsline{toc}{section}{Literaturverzeichnis}
+
+%\cite{bortz_forschungsmethoden_2006}     
+
+%\cite[S.~30]{landfield_single_1990}
+      
+
+
+\bibliographystyle{apager_dgps}
+%\bibliography{library_uft}
+\bibliography{lit_master}
+%\section*{Literaturverzeichnis}
+%\addcontentsline{toc}{section}{Literaturverzeichnis}
 
 
 
