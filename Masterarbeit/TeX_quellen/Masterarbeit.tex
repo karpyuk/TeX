@@ -11,7 +11,17 @@
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{flafter}
-\usepackage{apager}
+
+%\usepackage{apager}
+\usepackage[style=authoryear,bibstyle=apa,backend=biber]{biblatex}
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+\DefineBibliographyStrings{ngerman}{andothers = {{et\,al\adddot}},}
+\DefineBibliographyStrings{ngerman}{and = {{\&}},}
+\DefineBibliographyStrings{ngerman}{references = {Literaturverzeichnis}
+}%umbennen Litertaur zu Literaturverzeichnis
+\setcounter{smartand}{0}
+\bibliography{lit_master}
+
 \usepackage[font=small]{caption}
 \captionsetup[figure]{labelfont=it, labelsep=period}
 \captionsetup[table]{textfont=it,singlelinecheck=false,labelsep=newline,format=plain,justification=justified}
@@ -307,7 +317,7 @@ Im Folgenden werden einige der wichtigsten und aktuellsten Studien vorgestellt.
 \subsection{Erwartungen der Eltern an die Zusammenarbeit mit Kindertageseinrichtungen} 
 Eine der wichtigsten Erwartungen der Eltern an die Kindertageseinrichtungen ist ein offener, regelmäßiger Austausch sowohl über die Entwicklung und Verhaltensweisen ihres Kindes als auch über für sie relevanten pädagogischen Themen sowie allgemeinen Kindergartenangelegenheiten. Insbesondere sind die informellen täglichen Kontakte wie Tür- und Angelgespräche von Bedeutung. Bei diesem informellen Austausch fühlen sich die Eltern weniger unter Druck gesetzt als bei den offiziellen Gesprächen und mehr in ihrer Elternrolle gestärkt und respektiert (OECD, 2000, S. 54). Daher nehmen sie die Möglichkeit zum täglichen Austausch gerne wahr. Laut der Studie von Fröhlich-Gildhoff, Kraus und Rönnau (2006) sind für 80\% von 1147 befragten Eltern die pädagogischen Fachkräfte nach den (Ehe-) Partner/-innen die zweit wichtigsten Ansprechpersonen in Erziehungsfragen (Fröhlich-Gildhoff et al., 2006, S. 10).
 	
-Weiterhin haben 30\% der Eltern in der Studie "`Hürdenlauf zur Kita"' eine unzufriedenstellende Zusammenarbeit der Einrichtungen mit den Familien als eine der qualitativen Hürden für die außerfamiliäre Betreuung angegeben. Die Eltern hätten mehr Anreize, ihr Kind in der Krippe anzumelden, wenn eine engere und intensivere Zusammenarbeit der Erzieher/-innen mit den Eltern gegeben wäre. Zum Beispiel wünschen sich die Eltern eine hochwertigere Qualität der Angebote sowohl für die Kinder als auch für die Familien sowie bessere Informationen darüber durch die pädagogischen Fachkräfte (Sachverständigenrat deutscher Stiftungen für Integration und Migration [SVR], 2013, S. 16). Diese Ergebnisse decken sich mit den Ergebnissen der NUBBEK-Studie (2013), die zeigten, dass für die meisten Mütter eine gute Zusammenarbeit zwischen Eltern und pädagogischen Fachkräften entscheidend ist. Insbesondere die Mütter mit Migrationshintergrund wünschen sich eine verbesserte Zusammenarbeit mit den Erzieher/-innen. Die Befunde veranschaulichen, dass ein stärker an den Be\-dürf\-nis\-sen der Eltern orientiertes Angebot sowie eine höhere Anzahl von mehrsprachigen Fachkräften in der Einrichtung viele Eltern dazu bewegen würde, ihr unter drei\-jähri\-ges Kind institutionell betreuen zu lassen~\cite[S.~61-67]{Bensel_2013}.
+Weiterhin haben 30\% der Eltern in der Studie "`Hürdenlauf zur Kita"' eine unzufriedenstellende Zusammenarbeit der Einrichtungen mit den Familien als eine der qualitativen Hürden für die außerfamiliäre Betreuung angegeben. Die Eltern hätten mehr Anreize, ihr Kind in der Krippe anzumelden, wenn eine engere und intensivere Zusammenarbeit der Erzieher/-innen mit den Eltern gegeben wäre. Zum Beispiel wünschen sich die Eltern eine hochwertigere Qualität der Angebote sowohl für die Kinder als auch für die Familien sowie bessere Informationen darüber durch die pädagogischen Fachkräfte (Sachverständigenrat deutscher Stiftungen für Integration und Migration [SVR], 2013, S. 16). Diese Ergebnisse decken sich mit den Ergebnissen der NUBBEK-Studie (2013), die zeigten, dass für die meisten Mütter eine gute Zusammenarbeit zwischen Eltern und pädagogischen Fachkräften entscheidend ist. Insbesondere die Mütter mit Migrationshintergrund wünschen sich eine verbesserte Zusammenarbeit mit den Erzieher/-innen. Die Befunde veranschaulichen, dass ein stärker an den Be\-dürf\-nis\-sen der Eltern orientiertes Angebot sowie eine höhere Anzahl von mehrsprachigen Fachkräften in der Einrichtung viele Eltern dazu bewegen würde, ihr unter drei\-jähri\-ges Kind institutionell betreuen zu lassen~\parencite[S.~61-67]{Bensel_2013}.
 
 Aus den Studien wird der Wunsch der Eltern nach Optimierung der Zusammenarbeit deutlich sichtbar. Eine enge Zusammenarbeit mit den Fachkräften stellt also für fast alle Mütter ein relevantes Kriterium bei der Wahl der Kindertageseinrichtung dar.
 
@@ -566,9 +576,9 @@ Ferner wird ein weiterer Test, der \textit{Very Simple Structure-Test (VSS)}, an
 	VSS complexity 2 achieves a maximimum of 0.7 
 	with 2 factors
 	\end{verbatim}
-\noindent Die Komplexitätsgrade des \textit{VSS-Tests} erreicht also sein Maximum von $0.94$ mit einem Faktor und $0.7$ mit zwei Faktoren. Am besten ist die Faktorenlösung mit dem größten \textit{VSS} geeignet~\cite[S.~274]{Quellenangaben}. Somit deuten die Ergebnisse des \textit{VSS-Tests} deutlich auf eine Ein-Faktor-Lösung hin.
+\noindent Die Komplexitätsgrade des \textit{VSS-Tests} erreicht also sein Maximum von $0.94$ mit einem Faktor und $0.7$ mit zwei Faktoren. Am besten ist die Faktorenlösung mit dem größten \textit{VSS} geeignet~\parencite[S.~274]{Quellenangaben}. Somit deuten die Ergebnisse des \textit{VSS-Tests} deutlich auf eine Ein-Faktor-Lösung hin.
 
-	Der \textit{Minimum-Average-Partial-Test (MAP)}, zielt im Unterschied zum \textit{VSS} darauf, die durchschnittliche quadrierte Partialkorrelation zwischen den Faktoren festzustellen.  Bei diesem Test ist am besten die Faktorenlösung mit dem kleinsten \textit{MAP-Koeffizient} geeignet~\cite[S.~274]{Quellenangaben}. Das Ergebnis dieses Tests unterscheidet sich erheblich von den Befunden der anderen Tests:
+	Der \textit{Minimum-Average-Partial-Test (MAP)}, zielt im Unterschied zum \textit{VSS} darauf, die durchschnittliche quadrierte Partialkorrelation zwischen den Faktoren festzustellen.  Bei diesem Test ist am besten die Faktorenlösung mit dem kleinsten \textit{MAP-Koeffizient} geeignet~\parencite[S.~274]{Quellenangaben}. Das Ergebnis dieses Tests unterscheidet sich erheblich von den Befunden der anderen Tests:
 	\begin{verbatim}
 	VSS (mydata,rotate="promax", fm="pc")
 	The Velicer MAP achieves a minimum of 0.02 
@@ -691,7 +701,7 @@ Die Gründe für die sehr unterschiedliche Bewertung der Eltern können sehr vie
 	Neben der Auswertung der Einschätzung der Zusammenarbeit zwischen den Familien und pädagogischen Fachkräften in den FRÖBEL-Kinder\-tages\-ein\-rich\-tun\-gen seitens der Eltern, ging der zweite Untersuchungsbereich der Frage nach: \textit{"`Welche homogenen Bereiche lassen sich in der Itemskala "`Zusammenarbeit mit Familien"' herausbilden"'}. Die Methode der exploratorischen Faktorenanalyse er\-mög\-lich\-te die Analyse der vorliegenden Daten und hat eine eindimensionale Struktur des Fragebogens aufgezeigt. Das bedeutet, dass Eltern ihre Einschätzungen bezüglich der Zusammenarbeit mit Familien in FRÖBEL-Einrichtungen auf einer Dimension vornahmen. …............................
 	
 \section{Abschluss und Ausblick}	
-Der geschichtliche Rückblick auf die Entwicklung der Zusammenarbeit mit Familien in den Kindertageseinrichtungen hat veranschaulicht, dass die Zusammenarbeit mit Familien in den letzten Jahren eine grundlegende Wandlung erfahren hat und ein unabdingbarer Bestandteil der Arbeit in der heutigen Kindertageseinrichtung geworden ist. Außerdem ist die Zusammenarbeit zwischen den Eltern und den frühpädagogischen Bildungsinstitutionen seit 1990 ausdrücklich gesetzlich geregelt. Dieses Thema ist zudem in fast allen Bildungs- und Erziehungsplänen der Bundesländer (teils sehr umfangreich) beschrieben. Die Gründe für die Notwendigkeit der Bildungs- und Erziehungspartnerschaften in den Kindertageseinrichtungen sind vielfältig. Insbesondere ersichtlich wird die Wichtigkeit der Zusammenarbeit mit Familien aus dem sozial-ökologischen Ansatz von Bronfenbrenner. Der Ansatz betont ausdrücklich die Notwendigkeit einer engen Kooperation zwischen den beiden Lebensbereichen der Kinder (Familie und Kindertageseinrichtung), um die bestmögliche Entwicklung und Förderung des Kindes zu gewährleisten. Eine besonders hohe Relevanz hat die enge Kooperation zwischen den Eltern und pädagogischen Fachkräften, wenn es darum geht, durch die Kindertagesbetreuung die benachteiligten Familien zu fördern und zu unterstützen. Allgemein gilt in der fachlichen und wissenschaftlichen Diskussion ein "`gutes Verhältnis"' zwischen Kindergarten und Elternhaus als fördernd für das Aufwachsen der Kinder und als Qualitätskriterium für deren Betreuung~\cite{Fthenakis_1998}.
+Der geschichtliche Rückblick auf die Entwicklung der Zusammenarbeit mit Familien in den Kindertageseinrichtungen hat veranschaulicht, dass die Zusammenarbeit mit Familien in den letzten Jahren eine grundlegende Wandlung erfahren hat und ein unabdingbarer Bestandteil der Arbeit in der heutigen Kindertageseinrichtung geworden ist. Außerdem ist die Zusammenarbeit zwischen den Eltern und den frühpädagogischen Bildungsinstitutionen seit 1990 ausdrücklich gesetzlich geregelt. Dieses Thema ist zudem in fast allen Bildungs- und Erziehungsplänen der Bundesländer (teils sehr umfangreich) beschrieben. Die Gründe für die Notwendigkeit der Bildungs- und Erziehungspartnerschaften in den Kindertageseinrichtungen sind vielfältig. Insbesondere ersichtlich wird die Wichtigkeit der Zusammenarbeit mit Familien aus dem sozial-ökologischen Ansatz von Bronfenbrenner. Der Ansatz betont ausdrücklich die Notwendigkeit einer engen Kooperation zwischen den beiden Lebensbereichen der Kinder (Familie und Kindertageseinrichtung), um die bestmögliche Entwicklung und Förderung des Kindes zu gewährleisten. Eine besonders hohe Relevanz hat die enge Kooperation zwischen den Eltern und pädagogischen Fachkräften, wenn es darum geht, durch die Kindertagesbetreuung die benachteiligten Familien zu fördern und zu unterstützen. Allgemein gilt in der fachlichen und wissenschaftlichen Diskussion ein "`gutes Verhältnis"' zwischen Kindergarten und Elternhaus als fördernd für das Aufwachsen der Kinder und als Qualitätskriterium für deren Betreuung~\parencite{Fthenakis_1998}.
 
 	 Aus/Aufgrund den vorangegangenen Ausführungen und Untersuchungsergebnissen lassen sich einige Schlussfolgerungen für die weitere Entwicklung der Zusammenarbeit mit den Eltern in den FRÖBEL-Kindertageseinrichtungen ableiten. Zum einen geben die empirischen Befunde den Eltern Auskunft darüber, ob und inwieweit eine FRÖBEL-Einrichtung im Bereich "`Erziehungs- und Bildungspartnerschaft"' für sie einen attraktiven Kindergarten darstellt sowie allgemein ihren Bedürfnissen und Erwartungen entspricht. Weiterhin informieren die Ergebnisse der vorliegenden Untersuchung den Träger und die pädagogischen Fachkräfte über die Verbesserungsmöglichkeiten/-bedarfe im Bereich "`Zusammenarbeit mit Familien"' in ihren Kindertageseinrichtungen sowie über die bereits erzielten Erfolge in der Erziehungs-  und Bildungspartnerschaft zwischen den pädagogischen Fachkräften und Eltern.
 	 
@@ -710,12 +720,13 @@ Ferner lassen sich leider keine Rückschlüsse auf den Bildungsstand der Eltern,
 %\cite{bortz_forschungsmethoden_2006}     
 
 
-      
+\printbibliography
 
 
-\bibliographystyle{apager_dgps}
+%\bibliographystyle{apager_dgps}
 %\bibliography{library_uft}
-\bibliography{lit_master}
+
+%\bibliography{lit_master}
 %\section*{Literaturverzeichnis}
 %\addcontentsline{toc}{section}{Literaturverzeichnis}
 
