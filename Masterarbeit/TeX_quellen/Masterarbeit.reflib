@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+	<manage_target braces="true" utf8="true">lit_master.bib</manage_target>
+	<library_folder monitor="false"></library_folder>
+	<taglist/>
+	<doclist>
+		<doc>
+			<filename></filename>
+			<key>Luhmann_2010</key>
+			<notes></notes>
+			<bib_type>Book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>R für Einsteiger: Einführung in die Statistiksoftware für die Sozialwissenschaften.</bib_title>
+			<bib_authors>Luhmann, M.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2010</bib_year>
+			<bib_extra key="Publisher">Weinheim: Beltz.</bib_extra>
+			<bib_extra key="Series"></bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Aichinger_2011</key>
+			<notes></notes>
+			<bib_type>Book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Resilienzförderung mit Kindern. </bib_title>
+			<bib_authors>Aichinger, A.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2011</bib_year>
+			<bib_extra key="Publisher">Wiesbaden: Verlag für Sozialwissenschaften</bib_extra>
+			<bib_extra key="Series"></bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Fthenakis_1998</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Qualität von Kinderbetreuung. Konzepte, Forschungsergebnisse, internationaler Vergleich. </bib_title>
+			<bib_authors></bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>1998</bib_year>
+			<bib_extra key="editor">Fthenakis, W. E. and Textor, M.  R.</bib_extra>
+			<bib_extra key="publisher">Weinheim, Basel: Beltz.</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Beher</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Zehn Fragen – Zehn Antworten zur Fort- und Weiterbildungslandschaft für frühpädagogische Fachkräfte. Werkstattbericht aus einer bundesweiten Befragung von Weiterbildungsanbietern. </bib_title>
+			<bib_authors>Beher, K. and Walter, M.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2010</bib_year>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 13.03.2014 unter \url{http://www.weiterbildungsinitiative.de/uploads/media/WiFF_Studie_6_Walter_Beher_Internet.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Bensel_2013</key>
+			<notes></notes>
+			<bib_type>InCollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Betreungsgeschichte und aktuelle Betreuungssituation</bib_title>
+			<bib_authors>Bensel, J. and Aselmeier, M. and Agache, A. and Haug-Schnabel, G. and Kalicki, B. and Leyendecker, B. and others,</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>61-67</bib_pages>
+			<bib_year>2013</bib_year>
+			<bib_extra key="BookTitle">NUBBEK –Nationale Untersuchung zur Bildung, Betreuung und Erziehung in der frühen Kindheit </bib_extra>
+			<bib_extra key="Chapter">NUBBEK –Nationale Untersuchung zur Bildung, Betreuung und Erziehung in der frühen Kindheit (S.61-67).</bib_extra>
+			<bib_extra key="Editor">Tietze, W. and Becker-Stoll, F. and Bensel, J. and Eckhardt, A. G. and Haug-Schnabel, G. and Kalicki, B. and others,</bib_extra>
+			<bib_extra key="Publisher">Weimar, Berlin: verlag das netz.</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Bronfenbrenner</key>
+			<notes></notes>
+			<bib_type>Book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Die Ökologie der menschlichen Entwicklung. </bib_title>
+			<bib_authors>Bronfenbrenner, U.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>1981</bib_year>
+			<bib_extra key="Publisher">Stuttgart: Klett-Cotta.</bib_extra>
+			<bib_extra key="Series"></bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Bruce</key>
+			<notes></notes>
+			<bib_type>Book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Early Childhood Education. </bib_title>
+			<bib_authors>Bruce, T.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>1977</bib_year>
+			<bib_extra key="Publisher">Hodder, Stoughton: London.</bib_extra>
+			<bib_extra key="Series"></bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Buehner</key>
+			<notes></notes>
+			<bib_type>Book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title> Einführung in Test- und Fragebogenkonstruktion. </bib_title>
+			<bib_authors></bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2006</bib_year>
+			<bib_extra key="Editor">Bühner, M.</bib_extra>
+			<bib_extra key="Publisher">München: Pearson Studium.</bib_extra>
+			<bib_extra key="Series"></bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Eid_2013</key>
+			<notes></notes>
+			<bib_type>Book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Statistik und Forschungsmethoden. </bib_title>
+			<bib_authors>Eid, M. and Gollwitzer, M. and Schmitt, M.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2013</bib_year>
+			<bib_extra key="Publisher">Weinheim, Basel: Beltz.</bib_extra>
+			<bib_extra key="Series"></bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Froelich</key>
+			<notes></notes>
+			<bib_type>article</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Gemeinsam auf dem Weg. Eltern und Erzieher/-innen gestalten Erziehungspartnerschaft. </bib_title>
+			<bib_authors>Fröhlich-Gildhoff, K. and Kraus, G. and Rönnau, M.</bib_authors>
+			<bib_journal>Kindergarten heute</bib_journal>
+			<bib_volume>10</bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>6-15</bib_pages>
+			<bib_year>2006</bib_year>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Wolf_2002</key>
+			<notes></notes>
+			<bib_type>Book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Elternhaus und Kindergarten. Einschaetzungen aus zwei Perspektiven. </bib_title>
+			<bib_authors>Wolf, B.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2002</bib_year>
+			<bib_extra key="Publisher">Aachen: Shaker.</bib_extra>
+			<bib_extra key="Series"></bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Viernickel_2013</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Schlüssel zu guter Bildung, Erziehung und Betreuung. Bildungsaufgaben, Zeitkontingente und strukturelle Rahmenbedingungen in Kindertageseinrichtungen. </bib_title>
+			<bib_authors>Viernickel, S. and Nentwig-Gesemann, I. and Nicolai, K. and Schwarz, S. and Zenker, L.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year> 2013</bib_year>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 22.07.2014 unter \url{http://www.gew.de/Binaries/Binary96129/Expertise_Gute_Bildung_2013.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Viernickel_2009</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Schlüssel zu guter Bildung, Erziehung und Betreuung – Wissenschaftliche Parameter zur Bestimmung der pädagogischen Fachkraft-Kind-Relation. </bib_title>
+			<bib_authors>Viernickel, S. and Schwarz, S.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2009</bib_year>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 22.07.2014 unter \url{http://www.gew.de/Binaries/Binary47887/expertise_gute_betreuung_web.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>NUBBEK</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>NUBBEK – Nationale Untersuchung zur Bildung, Betreuung und Erziehung in der frühen Kindheit</bib_title>
+			<bib_authors></bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2013</bib_year>
+			<bib_extra key="editor">Tietze, W. and Becker-Stoll, F. and Bensel, J. and Eckhardt, A. G. and Haug-Schnabel, G. and Kalicki, B.  and others</bib_extra>
+			<bib_extra key="publisher">Weimar, Berlin: verlag das netz.</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Tietze_2005</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Kinder von 4 bis 8 Jahren. Zur Qualität der Erziehung und Bildung in Kindergarten, Grundschule und Familie</bib_title>
+			<bib_authors>Tietze, W. and Rossbach, H.-G. and Grenner, K</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2005</bib_year>
+			<bib_extra key="publisher">Weinheim und Basel: Beltz.</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Thiersch_2006</key>
+			<notes></notes>
+			<bib_type>incollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Familie und Kindertageseinrichtungen</bib_title>
+			<bib_authors>Thiersch, R</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>80-106</bib_pages>
+			<bib_year>2006</bib_year>
+			<bib_extra key="booktitle">Elternpädagogik – Von der Elternarbeit zur Erziehungspartnerschaft </bib_extra>
+			<bib_extra key="editor">P. Bauer and E. J. Brunner</bib_extra>
+			<bib_extra key="publisher">Freiburg: Lambertus</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Textor_2010</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Erziehungspartnerschaft mit Eltern unter Dreijähriger. </bib_title>
+			<bib_authors>Textor, M. R.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2010</bib_year>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 24.08.2014 unter \url{http://www.kindergartenpaedagogik.de/2084.html}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Textor_1992</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Familienunterstützende Maßnahmen im Kontext des Kindergartens. Bericht über einen Modellversuch in Passau.</bib_title>
+			<bib_authors>Textor, M. R.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>1992</bib_year>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 04.08.2014 unter \url{http://www.kindergartenpaedagogik.de/1327.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Sylva_2004</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>The Effective Provision of Pre-School Education (EPPE) project: Final Report. A Longitudinal Study funded by the DfES 1997-2004. </bib_title>
+			<bib_authors>Sylva, K. and Melhuish, E. and Sammons, P. and Siraj-Blatchford, I. and Taggart, B.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2004</bib_year>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 28.07.2014 unter \url{http://eprints.ioe.ac.uk/5309/1/sylva2004EPPEfinal.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Stoebe_2008</key>
+			<notes></notes>
+			<bib_type>article</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Von der Kindertageseinrichtung zum Familienzentrum – Konzeption, Entwicklungen und Erprobung des Gütesiegels „Familienzentrum NRW“. </bib_title>
+			<bib_authors>Stöbe-Blossey, S. and Mierau, S. and Tietze, W.</bib_authors>
+			<bib_journal>Zeitschrift für Erziehungswissenschaft</bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number>Sonderheft 11</bib_number>
+			<bib_pages>105-122</bib_pages>
+			<bib_year>2008</bib_year>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Stange_2013</key>
+			<notes></notes>
+			<bib_type>incollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Erziehungs- und Bildungspartnerschaften – Grundlagen, Strukturen, Begründungen </bib_title>
+			<bib_authors>Stange, W.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>12-39</bib_pages>
+			<bib_year>2013</bib_year>
+			<bib_extra key="booktitle">Erziehungs- und Bildungspartnerschaften – Grundlagen, Strukturen, Begründungen</bib_extra>
+			<bib_extra key="editor"> I. W. Stange and Krüger, R. and Henschel, A. and Ch. Schmitt</bib_extra>
+			<bib_extra key="publisher">Wiesbaden: Verlag für Sozialwissenschaften.</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Dippelhofer_1995</key>
+			<notes></notes>
+			<bib_type>Book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Die Erzieherin im evangelischen Kindergarten. Empirische Analysen zum professionellen Selbstbild des pädagogischen Personals, zur Sicht der Kirche und zu den Erwartungen der Eltern. </bib_title>
+			<bib_authors>Dippelhofer-Stiem, B. and Kahle, I.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>1995</bib_year>
+			<bib_extra key="Publisher">Bielefeld: Kleine.</bib_extra>
+			<bib_extra key="Series"></bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Berger</key>
+			<notes></notes>
+			<bib_type>InCollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Friedrich Fröbels Konzeption einer Pädagogik der frühen Kindheit</bib_title>
+			<bib_authors>Berger, M.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>10-22</bib_pages>
+			<bib_year>2000</bib_year>
+			<bib_extra key="BookTitle">Pädagogische Ansätze im Kindergarten </bib_extra>
+			<bib_extra key="Editor">Fthenakis, W. E. and Textor, M. R.</bib_extra>
+			<bib_extra key="Publisher">Weinheim, Basel: Beltz</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Sandberg</key>
+			<notes></notes>
+			<bib_type>article</bib_type>
+			<bib_doi>10.1080/09669760802025165</bib_doi>
+			<bib_title>Preschool-home cooperation in change</bib_title>
+			<bib_authors>Sandberg, A. and Vuorinen, T.</bib_authors>
+			<bib_journal>International Journal of Early Years Education</bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number>16</bib_number>
+			<bib_pages>151-161</bib_pages>
+			<bib_year>2008</bib_year>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Sacher </key>
+			<notes></notes>
+			<bib_type>incollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Erziehungs- und Bildungspartnerschaften in der Schule: zum Forschungsstand. </bib_title>
+			<bib_authors>Sacher, W.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>232-241</bib_pages>
+			<bib_year>2012</bib_year>
+			<bib_extra key="booktitle">Erziehungs- und Bildungspartnerschaften</bib_extra>
+			<bib_extra key="editor">W. Stange and R. Krüger and A. Henschel and Ch. Schmitt</bib_extra>
+			<bib_extra key="publisher">Wiesbaden: Verlag für Sozialwissenschaften</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>SVR</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Hürdenlauf zur Kita: Warum Eltern mit Migrationshintergrund ihr Kind seltener in die frühkindliche Tagesbetreuung schicken.</bib_title>
+			<bib_authors>{Sachverständigenrat deutscher Stiftungen für Integration und Migration (Hrsg.)}</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2013</bib_year>
+			<bib_extra key="howpublished">\url{http://www.svr-migration.de/wp-content/uploads/2014/03/SVR_FB_Huerdenlauf-zur-Kita_Web.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>PEB</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Gesunde kitas · starke kinder. Ganzheitliche Gesundheits- und Bildungsförderung in KiTas</bib_title>
+			<bib_authors></bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2007</bib_year>
+			<bib_extra key="editor">{Plattform Ernährung und Bewegung e. V. [peb]}</bib_extra>
+			<bib_extra key="howpublished">\url{http://peb.hehosting.de/uploads/tx_ernaehrungundbewegung/peb_KiTa_Arbeitshilfe_Screenversion.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>WIFF</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Zusammenarbeit mit Eltern in Kindertageseinrichtungen - Internationale Perspektive. Ein Überblick: Studien und Forschungsergebnisse. Expertise für das Projekt Weiterbildungsinitiative Frühpädagogische Fachkräfte (WiFF)</bib_title>
+			<bib_authors>Pietsch, S. and Ziesemer, S. and Fröhlich-Gildhoff, K. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2010</bib_year>
+			<bib_extra key="howpublished">\url{http://www.weiterbildungsinitiative.de/uploads/media/WiFF_Expertise_7_Froehlich-Gildhoff.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Peitz</key>
+			<notes></notes>
+			<bib_type>article</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Wenn bei Kindern Verhaltensauffälligkeiten diagnostiziert werden. Risiken für die Erziehungspartnerschaft von Familie und Kindergarten</bib_title>
+			<bib_authors>Peitz, Gabriele</bib_authors>
+			<bib_journal>Psychologie in Erziehung und Unterricht </bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number>51</bib_number>
+			<bib_pages>258-272.</bib_pages>
+			<bib_year>2004</bib_year>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>OECD </key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Early Childhood Education and Care Policy in Finnland. Background report prepared for the OECD Thematic Review of Early Childhood Education and Care Policy</bib_title>
+			<bib_authors>OECD </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2000</bib_year>
+			<bib_extra key="howpublished">\url{http://www.oecd.org/finland/2476019.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Muehling</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Wie informieren sich bayerische Eltern über erziehungs- und familienbezogene Themen? Ergebnisse der ifb-Elternbefragung zur Familienbildung 2006</bib_title>
+			<bib_authors>Mühling, T. and Smolka, A. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2007</bib_year>
+			<bib_extra key="howpublished">\url{http://www.ifb.bayern.de/imperia/md/content/stmas/ifb/materialien/mat_2007_5.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Klein</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Eltern in der Kita. Schwierigkeiten meistern - Kommunikation entwickeln</bib_title>
+			<bib_authors>Klein, L. and Vogt, H. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2008</bib_year>
+			<bib_extra key="publisher">Seelze-Velber: Klett/Kallmeyer</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Kieschnick</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>FRÖBEL-Rahmenkonzeption</bib_title>
+			<bib_authors>Kieschnick, A. and Marx, J. and Steinfeldt, E. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2014</bib_year>
+			<bib_extra key="howpublished">\url{http://www.froebel-gruppe.de/fileadmin/user/Dokumente/Broschueren/FROEBEL_Rahmenkonzeption_Mai_2014_A4_RZ_140620.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Kasueschke</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Frühpädagogik heute. Herausforderungen an Disziplin und Profession</bib_title>
+			<bib_authors>Kasüschke, D. and Fröhlich-Gildhoff, K. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2008</bib_year>
+			<bib_extra key="publisher">Köln: Carl Link</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Katz</key>
+			<notes></notes>
+			<bib_type>incollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Qualität der Früherziehung in Betreuungseinrichtungen: Fünf Perspektiven</bib_title>
+			<bib_authors>Katz, L. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>226-239</bib_pages>
+			<bib_year>1996</bib_year>
+			<bib_extra key="booktitle">Früherziehung. Trends, internationale Forschungsergebnisse, Praxisorientierungen </bib_extra>
+			<bib_extra key="editor">W. Tietze</bib_extra>
+			<bib_extra key="publisher">Neuwied: Luchterhand</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Jeske</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Mit den Eltern und nicht für die Eltern. Zusammenarbeit von Eltern und Erzieher/-innen in Kindertageseinrichtungen</bib_title>
+			<bib_authors>Jeske, K. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>1997</bib_year>
+			<bib_extra key="publisher">Grafschaft: Vektor</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Hildenbrand</key>
+			<notes></notes>
+			<bib_type>incollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Kooperation mit den Eltern als Bestandteil der Sprachförderung in Kindertageseinrichtungen</bib_title>
+			<bib_authors>Hildenbrand, C. and Köhler, H. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>193-214</bib_pages>
+			<bib_year>2010</bib_year>
+			<bib_extra key="booktitle">Forschung in der Frühpädagogik III. Schwerpunkt: Sprachentwicklung \&amp; Sprachförderung</bib_extra>
+			<bib_extra key="editor">K. Fröhlich-Gildhoff and I. Netwig-Gesemann and P. Strehmel</bib_extra>
+			<bib_extra key="publisher">Freiburg: FEL Forschung-Entwicklung-Lehre</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Herrmann</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Der Kindergarten aus der Sicht der Eltern. Eine empirische Fragebogenstudie zu parentalen Orientierungen gegenüber Einrichtungen des Elementarbereiches in Ost- und Westdeutschland</bib_title>
+			<bib_authors>Herrmann, I. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2007</bib_year>
+			<bib_extra key="publisher">Aachen: Shaker</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Hense</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Eltern engagieren sich. Zusammenarbeit mit Elternbeiräten, Elternräten oder  Elternvertretungen</bib_title>
+			<bib_authors>Hense, M. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2001</bib_year>
+			<bib_extra key="publisher">München: Don Bosco</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Henry_Huthmacher</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Eltern unter Druck. Zusammenfassung der wichtigsten Ergebnisse der Studie</bib_title>
+			<bib_authors>Henry-Huthmacher, C.</bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2008</bib_year>
+			<bib_extra key="howpublished">\url{http://www.kas.de/upload/dokumente/2008/02/080227_henry.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Griebel</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Der Übergang von der Kita in die Grundschule - Die Erziehungspartnerschaft in Transitionsphasen </bib_title>
+			<bib_authors>Griebel, W. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2010</bib_year>
+			<bib_extra key="howpublished">\url{http://www.kitaelementar.de/data/files/HerrGriebelDieErziehungspartnerschaftinTransitionsphasen.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Entwpsych</key>
+			<notes></notes>
+			<bib_type>book</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Angewandte Entwicklungspsychologie der Kindheit. Begleiten, Unterstützen und Fördern in Familie, Kita und Grundschule</bib_title>
+			<bib_authors>Fröhlich-Gildhoff, K. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2013</bib_year>
+			<bib_extra key="publisher">Stuttgart: Kohlhammer</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Becker</key>
+			<notes></notes>
+			<bib_type>incollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Elternarbeit in Kindergarten und Hort</bib_title>
+			<bib_authors>Becker-Textor, I. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>238-253</bib_pages>
+			<bib_year>1992</bib_year>
+			<bib_extra key="booktitle">Hilfen für Familien. Ein Handbuch für psychosoziale Berufe</bib_extra>
+			<bib_extra key="editor"> M. R. Textor</bib_extra>
+			<bib_extra key="publisher">Frankfurt am Main: Fischer</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>SGB_8</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Achtes Buch Sozialgesetzbuch - Kinder- und Jugendhilfe (SGB VIII). </bib_title>
+			<bib_authors></bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year></bib_year>
+			<bib_extra key="howpublished">\url{http://www.sozialgesetzbuch-sgb.de/sgbviii/1.html}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Wiezorek</key>
+			<notes></notes>
+			<bib_type>incollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Elternpädagogik jenseits der Pädagogisierung – Überlegungen zum pädagogischen Elternbezug aus anerkennungstheoretischer Perspektive</bib_title>
+			<bib_authors>Wiezorek, C. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>42-60</bib_pages>
+			<bib_year>2006</bib_year>
+			<bib_extra key="booktitle">Elternpädagogik. Von der Elternarbeit zur Erziehungspartnerschaft</bib_extra>
+			<bib_extra key="editor">P. Bauer and E. J. Brunner</bib_extra>
+			<bib_extra key="publisher">Freiburg im Breisgau: Lambertus</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Schweinhart</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>The High/Scope Perry Preschool study through age 40. Summary, Conclusions, and Frequently Asked Questions</bib_title>
+			<bib_authors>Schweinhart, L. J. and Montie, J. and Xiang, Z. and Barnett, W. S. and Belfield, C. R. and Nores, M. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>2011</bib_year>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 18.08.2014 unter \url{http://www.highscope.org/file/Research/PerryProject/specialsummary_rev2011_02_2.pdf}</bib_extra>
+		</doc>
+	</doclist>
+</library>
