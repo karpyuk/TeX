@@ -65,7 +65,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2010</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 13.03.2014 unter \url{http://www.weiterbildungsinitiative.de/uploads/media/WiFF_Studie_6_Walter_Beher_Internet.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 13.03.2014 unter \href{http://www.weiterbildungsinitiative.de/uploads/media/WiFF_Studie_6_Walter_Beher_Internet.pdf}{weiterbildungsinitiative.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -105,7 +105,7 @@
 			<filename></filename>
 			<key>Bruce</key>
 			<notes></notes>
-			<bib_type>Book</bib_type>
+			<bib_type>book</bib_type>
 			<bib_doi></bib_doi>
 			<bib_title>Early Childhood Education. </bib_title>
 			<bib_authors>Bruce, T.</bib_authors>
@@ -114,8 +114,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>1977</bib_year>
-			<bib_extra key="Publisher">Hodder, Stoughton: London.</bib_extra>
-			<bib_extra key="Series"></bib_extra>
+			<bib_extra key="publisher">London: Hodder, Stoughton</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -271,7 +270,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2010</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 24.08.2014 unter \url{http://www.kindergartenpaedagogik.de/2084.html}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 24.08.2014 unter \href{http://www.kindergartenpaedagogik.de/2084.html}{kindergartenpaedagogik.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -286,7 +285,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>1992</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 04.08.2014 unter \url{http://www.kindergartenpaedagogik.de/1327.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 04.08.2014 unter \href{http://www.kindergartenpaedagogik.de/1327.pdf}{kindergartenpaedagogik.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -479,7 +478,7 @@
 			<notes></notes>
 			<bib_type>misc</bib_type>
 			<bib_doi></bib_doi>
-			<bib_title>Wie informieren sich bayerische Eltern über erziehungs- und familienbezogene Themen? Ergebnisse der ifb-Elternbefragung zur Familienbildung 2006</bib_title>
+			<bib_title>Wie informieren sich bayerische Eltern über erziehungs- und familienbezogene Themen? Ergebnisse der ifb-Elternbe-fragung zur Familienbildung 2006</bib_title>
 			<bib_authors>Mühling, T. and Smolka, A. </bib_authors>
 			<bib_journal></bib_journal>
 			<bib_volume></bib_volume>
@@ -640,7 +639,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2010</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 28.02.2014 unter \url{http://www.kitaelementar.de/data/files/HerrGriebelDieErziehungspartnerschaftinTransitionsphasen.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 28.02.2014 unter \href{http://www.kitaelementar.de/data/files/HerrGriebelDieErziehungspartnerschaftinTransitionsphasen.pdf}{kitaelementar.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -734,7 +733,7 @@
 			<bib_number></bib_number>
 			<bib_pages>193-233</bib_pages>
 			<bib_year>1998</bib_year>
-			<bib_extra key="booktitle">Kindertagesbetreuung in Deutschland. Bilanzen und Perspektiven </bib_extra>
+			<bib_extra key="booktitle">Kindertagesbetreuung in\\Deutschland. Bilanzen und Perspektiven </bib_extra>
 			<bib_extra key="editor">D. Sturzbecher</bib_extra>
 			<bib_extra key="publisher">Freiburg im Breisgau: Lambertus</bib_extra>
 		</doc>
@@ -751,7 +750,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>o.J.</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 17.06.2014 unter \url{http://www.ipzf.de/Erziehungspartnerschaft_Bildungspartnerschaft.html}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 17.06.2014 unter \href{http://www.ipzf.de/Erziehungspartnerschaft_Bildungspartnerschaft.html}{ipzf.de}</bib_extra>
 		</doc>
 	</doclist>
 </library>
