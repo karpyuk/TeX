@@ -680,14 +680,14 @@
 			<notes></notes>
 			<bib_type>misc</bib_type>
 			<bib_doi></bib_doi>
-			<bib_title>Achtes Buch Sozialgesetzbuch - Kinder- und Jugendhilfe (SGB VIII). </bib_title>
+			<bib_title>Sozialgesetzbuch (SGB VIII). Achtes Buch Kinder - und Jugendhilfe</bib_title>
 			<bib_authors></bib_authors>
 			<bib_journal></bib_journal>
 			<bib_volume></bib_volume>
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year></bib_year>
-			<bib_extra key="howpublished">\url{http://www.sozialgesetzbuch-sgb.de/sgbviii/1.html}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 22.07.2014 unter \url{http://www.sozialgesetzbuch-sgb.de/sgbviii/1.html}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -720,6 +720,23 @@
 			<bib_pages></bib_pages>
 			<bib_year>2011</bib_year>
 			<bib_extra key="howpublished">Zuletzt abgerufen am 18.08.2014 unter \url{http://www.highscope.org/file/Research/PerryProject/specialsummary_rev2011_02_2.pdf}</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Sturzbecher</key>
+			<notes></notes>
+			<bib_type>incollection</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Das Zusammenwirken von Familie und Kita. Voraussetzungen und Erfahrungen aus der Perspektive von drei Bundesländern</bib_title>
+			<bib_authors>Sturzbecher, D. and Bredow, C. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages>193-233</bib_pages>
+			<bib_year>1998</bib_year>
+			<bib_extra key="booktitle">Kindertagesbetreuung in Deutschland. Bilanzen und Perspektiven </bib_extra>
+			<bib_extra key="editor">D. Sturzbecher</bib_extra>
+			<bib_extra key="publisher">Freiburg im Breisgau: Lambertus</bib_extra>
 		</doc>
 	</doclist>
 </library>
