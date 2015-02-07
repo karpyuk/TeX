@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[american, ngerman]{babel}
+\usepackage[english, ngerman]{babel}
 \usepackage{csquotes}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -10,9 +10,10 @@
 \usepackage[section]{placeins}
 \usepackage{url}
 %\usepackage{times}
-\usepackage{hyperref}
+
 \usepackage{tabularx}
 \usepackage{flafter}
+\usepackage{ellipsis}
 
 %\usepackage{apager}
 \usepackage[style=apa,bibstyle=apa,backend=biber]{biblatex}
@@ -28,49 +29,171 @@
 \captionsetup[figure]{labelfont=it, labelsep=period}
 \captionsetup[table]{textfont=it,singlelinecheck=false,labelsep=newline,format=plain,justification=justified}
 \usepackage[a4paper,top=3cm,bottom=3cm,left=3cm,right=4cm]{geometry}
+\usepackage{titlesec}
+
 \usepackage{setspace}
 \onehalfspacing
+
+\titleformat*{\section}{\normalfont\Large\bfseries\singlespacing}
+\titleformat*{\subsection}{\normalfont\large\bfseries\singlespacing}
+\titleformat*{\subsubsection}{\normalfont\normalsize\bfseries\singlespacing}
+
+\usepackage{hyperref}
 
 \hyphenation{pä-da-go-gischen Kin-der-ta-ges-ein-rich-tung Bron-fen-bren-ner}
 
 \author{Iryna Karpyuk \\
 Matrikelnummer: 4222981}
 \title{Die Einschätzung der Erziehungs- und Bildungspartnerschaft zwischen pädagogischen Fachkräften und Familien durch die Eltern am Beispiel der FRÖBEL-Kindertageseinrichtungen}
+
+\makeatletter
+\def\cbx@apa@ifnamesaved{%
+  \xifinlist{\thefield{fullhash}}{\cbx@apa@names}
+    {\@firstoftwo}
+    {\@secondoftwo}}
+
+\newbibmacro*{cite:author}{%
+  \iffieldequals{fullhash}{\cbx@lasthash}
+% Multiple cites in one command
+   {\setunit{\compcitedelim}%
+    \usebibmacro{cite:plabelyear+extrayear}}%
+% Single cite
+   {\ifthenelse{\ifnameundef{labelname}\OR\iffieldequalstr{entrytype}{patent}}
+% No author/editor
+     {\usebibmacro{cite:noname}%
+       \savefield{fullhash}{\cbx@lasthash}}
+% Normal cite
+     {\ifnameundef{shortauthor}
+        {\printnames[labelname][-\value{listtotal}]{labelname}}%
+        {\cbx@apa@ifnamesaved
+          {\printnames{shortauthor}}
+          {\printnames[labelname][-\value{listtotal}]{author}\addspace\printnames[sabrackets]{shortauthor}}}%
+      \savefield{fullhash}{\cbx@lasthash}}}%
+   \setunit{\multicitedelim}}
+
+\newbibmacro*{cite}{%
+  \iffieldequals{fullhash}{\cbx@lasthash}
+% Multiple cites in one command
+   {\setunit{\compcitedelim}%
+    \usebibmacro{cite:plabelyear+extrayear}}%
+% Single cite
+   {\ifthenelse{\ifnameundef{labelname}\OR\iffieldequalstr{entrytype}{patent}}
+% No author/editor
+     {\usebibmacro{cite:noname}%
+       \setunit{\nameyeardelim}%
+       \usebibmacro{cite:plabelyear+extrayear}%
+       \savefield{fullhash}{\cbx@lasthash}}
+% Normal cite
+     {\ifnameundef{shortauthor}
+        {\printnames[labelname][-\value{listtotal}]{labelname}}%
+        {\cbx@apa@ifnamesaved
+          {\printnames{shortauthor}}
+          {\printnames[labelname][-\value{listtotal}]{author}\addspace\printnames[sabrackets]{shortauthor}}}%
+      \setunit{\nameyeardelim}%
+      \usebibmacro{cite:plabelyear+extrayear}%
+      \savefield{fullhash}{\cbx@lasthash}}}%
+   \setunit{\multicitedelim}}
+
+\newbibmacro*{textcite}{%
+  \iffieldequals{fullhash}{\cbx@lasthash}
+% Compact cite - more than one thing for same author
+    {\setunit{\compcitedelim}%
+     \usebibmacro{cite:plabelyear+extrayear}}
+% New cite
+    {%
+    \ifbool{cbx:parens}
+      {\bibcloseparen\global\boolfalse{cbx:parens}}
+      {}%
+      \setunit{\compcitedelim}%
+      \ifthenelse{\ifnameundef{labelname}\OR\iffieldequalstr{entrytype}{patent}}
+  % No author/editor or patent
+       {\iffieldundef{shorthand}%
+    % Cite using title
+         {\usebibmacro{cite:noname}%
+          \setunit{\ifbool{cbx:np}%
+                   {\nameyeardelim}%
+                   {\global\booltrue{cbx:parens}\addspace\bibopenparen}}%
+          \usebibmacro{cite:plabelyear+extrayear}}
+    % Cite using shorthand
+         {\usebibmacro{cite:shorthand}}}
+  % Normal cite with author/editor
+  % Normal full cite
+       {\ifnameundef{shortauthor}%
+    % Normal full cite
+         {\printnames[labelname][-\value{listtotal}]{labelname}}
+    % Cite using short author
+         {\cbx@apa@ifnamesaved
+           {\printnames{shortauthor}}
+           {\printnames[labelname][-\value{listtotal}]{author}}}%
+  % Year
+        \setunit{\ifbool{cbx:np}
+                  {\nameyeardelim}
+                  {\global\booltrue{cbx:parens}\addspace\bibopenparen}}%
+  % Put the shortauthor inside the year brackets if necessary
+        \ifnameundef{shortauthor}
+         {}
+         {\cbx@apa@ifnamesaved
+           {}
+           {\printnames{shortauthor}\setunit{\nameyeardelim}}}%
+  % Actual year printing
+        \usebibmacro{cite:plabelyear+extrayear}%
+  % Save name hash for checks later
+        \savefield{fullhash}{\cbx@lasthash}}}}
+
+\newbibmacro*{citeyear}{%
+  \iffieldundef{labelyear}
+    {\usebibmacro{cite:init}}
+    {\iffieldequals{fullhash}{\cbx@lasthash}
+       {\setunit{\compcitedelim}%
+        \usebibmacro{cite:plabelyear+extrayear}}
+       {\usebibmacro{cite:plabelyear+extrayear}%
+        \savefield{fullhash}{\cbx@lasthash}}}%
+  \setunit{\multicitedelim}}
+
+\newbibmacro*{cite:post}{%
+  \xifinlist{\thefield{fullhash}}{\cbx@apa@names}
+    {}
+    {\listxadd{\cbx@apa@names}{\thefield{fullhash}}}}
+\makeatother
+
 \begin{document}
 \begin{titlepage}
 
 \normalsize
 
+\begin{singlespace}
 \begin{center}
 Fachbereich Erziehungswissenschaft und Psychologie\\
 der Freien Universität Berlin\\
 Masterarbeit im Masterstudiengang Bildungswissenschaft\\
-gemäß der Prüfungsordnung vom 18. März 2010\\
+{\small gemäß der Prüfungsordnung vom 18. März 2010}\\
 \end{center}
-
-
-\begin{center}
-Bildungswissenschaft
-\end{center}
-
+\end{singlespace}
 
 \vspace{30pt}
+\begin{center}
+{\Large Bildungswissenschaft}
+\end{center}
+
+
+\vspace{20pt}
 
 \begin{center}
 %\fontfamily{phv}\selectfont{
 \LARGE{%\bfseries{
-Die Einschätzung der Erziehungs- und Bildungspartnerschaft zwischen pädagogischen Fachkräften und Familien durch die Eltern am Beispiel der FRÖBEL-Kindertageseinrichtungen
+Die Einschätzung der Erziehungs- und Bildungspartnerschaft zwischen pädagogischen Fachkräften und Familien durch die Eltern\linebreak am Beispiel der FRÖBEL-Kindertageseinrichtungen
 }%}%}
 \\  
 \vspace{50pt}
  \end{center}
                          
-\normalsize  
+ 
 \begin{flushleft}
-1. Prüfer/-in:  Prof. Dr. Yvonne Anders\\
 
-2. Prüfer/-in:  Dr. Axinja Hachfeld\\
-\vspace{10pt}
+1. Prüferin:  		\hspace {2cm}Prof. Dr. Yvonne Anders\\
+\vspace{30pt}	
+2. Prüferin:  		\hspace {2cm}Dr. Axinja Hachfeld\\
+\vspace{50pt}
 vorgelegt von\\ 
 Iryna Karpyuk \\
 Storkowerstr. 225\\
@@ -80,29 +203,23 @@ Matrikelnummer: 4222981\\
 Wörter im Textteil: [Anzahl Wörter]\\     
 
 \begin{center}
-\normalsize
-\vspace{150pt}
+\vspace{30pt}
 
 Berlin, 9.Februar 2015
 \end{center}
-\end{titlepage}
-\normalsize                                              
+\end{titlepage}                                             
 \pagebreak
 
 %\maketitle
-
+\renewcommand\abstractname{Abstract}
 \begin{abstract}
-This thesis deals with the partnership in upbringing and education between
-pedagogues and parents in the FRÖBEL kindergarden institutions. This study
-investigates the question which homogenous dimensions emerge from the sub scale
-``collaboration with parents'' and how the cooperation between the pedagogues
-and the families is evaluated by the parents.
-The basis of this work are 2579 questionaires given to parents in which the
-families could asses the cooperation.
+This thesis deals with the partnership in upbringing and education between pedagogues and parents in the FRÖBEL early learning centres. The study examined the question, which homogenous dimensions emerge from the sub scale
+"`partnership with parents"' and how the cooperation between the pedagogues and the families is evaluated by the parents.
+The analysis is based on 2579 questionaires given to parents in which the families could asses the cooperation.
 The results illustrate that the majority of the parents expressed satisfaction
-with the collaboration between the pedagogues and the families in the FRÖBEL
-kindergarten institutions. Additionally one dimension ``collaboration with
-parents'' was extracted in the data structure by exploritatory factor analysis.
+with the cooperation between the pedagogues and the families in the FRÖBEL early learning centres. Additionally one dimension "`partnership with
+parents"' was extracted in the data structure by principal component analysis.
+
 %Die vorliegende Arbeit beschäftigt sich mit der Erziehungs- und Bildungspartnerschaft zwischen den pädagogischen Fachkräften und Eltern in den FRÖBEL-Kindertageseinrichtungen. Die Studie geht der Frage nach, welche homogenen Dimensionen sich in der Subskala „Zusammenarbeit mit Familien“ herausbilden lassen und wie die Kooperation zwischen den pädagogischen Fachkräften und den Familien aus der Sicht der Eltern beurteilt wird.
 %Die Datengrundlage bilden 2579 Elternfragebögen, anhand deren Eltern die Möglichkeit bekommen haben, die Zusammenarbeit einzuschätzen.
 %Die Befunde veranschaulichen, dass sich die Mehrheit der Eltern positiv bezüglich der Zusammenarbeit zwischen pädagogischen Fachkräften und Familien in den FRÖBEL-Einrichtungen äußerten. Weiterhin ließ sich in der Datenstruktur mittels der exploratorischen Faktorenanalyse eine Dimension „Zusammenarbeit mit Familien“ herausbilden.
@@ -117,11 +234,11 @@ parents'' was extracted in the data structure by exploritatory factor analysis.
 \listoftables
 \pagebreak
 
-\begin{titlepage}
-\end{titlepage}
 \vspace*{\fill}
-\begin{Huge}\noindent
-I: Einleitung und theoretischer Rahmen der Arbeit
+\begin{Huge}
+\begin{center}
+I: Einleitung und theoretischer Teil
+\end{center}
 \end{Huge}
 \vspace*{\fill}
 \pagebreak
@@ -132,16 +249,17 @@ I: Einleitung und theoretischer Rahmen der Arbeit
  
 \noindent Heutzutage wachsen Kinder vorwiegend in den zwei Systemen "`Familie"' und "`Kindertageseinrichtung"' auf. Die Aufgabe der beiden Systeme besteht nicht nur darin, die Kinder zu erziehen, sondern in erster Linie sie in ihrer Entwicklung bestmöglich zu fördern und zu unterstützen. Um dies zu erreichen, sollten die beiden Systeme bewusst eine wechselseitige Kooperation anstreben und sich gegenseitig in der Erziehung, Bildung und Betreuung der Kinder ergänzen.
 	  
-Die Zusammenarbeit\footnote{In der vorliegenden Arbeit werden die Begriffe "`Zusammenarbeit mit Familien"' und "`Erziehungs- und Bildungspartnerschaft"' als Synonyme verwendet.} zwischen Familien und pädagogischen Fach"-kräf"-ten stellt eine der primären Aufgaben der Kindertageseinrichtungen dar. Sie bildet neben den zwei wichtigsten Aufgabenspektren der Erzieher/-innen: der "`direkten"' pädagogischen Arbeit am Kind und der Notwendigkeit der systematischen, institutionellen Vernetzung mit anderen Einrichtungen, einen dritten wesentlichen Aspekt moderner Kindergartenpädagogik~\parencite[S.~141]{Kasueschke}. Dass die Zusammenarbeit mit den Eltern in den Kindergärten einen so hohen Stellenwert einnimmt, ist nicht zuletzt der gestiegenen Bedeutung der vorschulischen Bildung, Betreuung und Erziehung zu verdanken. Als Folge wird in der heutigen Gesellschaft ein immer größerer Wert auf eine gute Zusammenarbeit zwischen den Kindertagesstätten und den Eltern gelegt. In diesem Zusammenhang hat die Elternarbeit in den letzten Jahren eine grundlegende Wandlung erfahren. Für lange Zeit wurde die Zusammenarbeit mit Familien für eine als unnötig betrachtete Zusatzbelastung für die pädagogischen Fachkräfte gehalten. Erst seit den 80er Jahren rückt sie immer mehr in den Fokus der Öffentlichkeit. Diesen geschichtlichen Wandel grob zu skizzieren, ist ein Teil der Arbeit. Das Ziel der Auseinandersetzung mit den geschichtlich und gesellschaftlich stattgefundenen Veränderungen (Kapitel 2) ist zum einen, die fortdauernde Notwendigkeit von Veränderung und Anpassung in der Elternarbeit zu betonen, aber auch die zunehmende Signifikanz des Themas damit zu untermauern.
+Die Zusammenarbeit\footnote{In der vorliegenden Arbeit werden die Begriffe "`Zusammenarbeit mit Familien"' und "`Erziehungs- und Bildungspartnerschaft"' als Synonyme verwendet.} zwischen Familien und pädagogischen Fach"-kräf"-ten stellt eine der primären Aufgaben der Kindertageseinrichtungen dar. Sie bildet neben den zwei wichtigsten Aufgabenspektren der Erzieher/-innen: der "`direkten"' pädagogischen Arbeit am Kind und der Notwendigkeit der systematischen, institutionellen Vernetzung mit anderen Einrichtungen, einen dritten wesentlichen Aspekt moderner Kindergartenpädagogik~\parencite[S.~141]{Kasueschke}. Dass die Zusammenarbeit mit den Eltern in den Kindergärten einen so hohen Stellenwert einnimmt, ist nicht zuletzt der gestiegenen Bedeutung der vorschulischen Bildung, Betreuung und Erziehung zu verdanken. Als Folge wird in der heutigen Gesellschaft ein immer größerer Wert auf eine gute Zusammenarbeit zwischen den Kindertagesstätten und den Eltern gelegt. In diesem Zusammenhang hat die Elternarbeit in den letzten Jahren eine grundlegende Wandlung erfahren. Für lange Zeit wurde die Zusammenarbeit mit Familien für eine als unnötig betrachtete Zusatzbelastung für die pädagogischen Fachkräfte gehalten. Erst seit den 80er Jahren rückt sie immer mehr in den Fokus der Öffentlichkeit. Diesen geschichtlichen Wandel grob zu skizzieren, ist ein Teil der Arbeit. Das Ziel der Auseinandersetzung mit den geschichtlich und gesellschaftlich stattgefundenen Veränderungen ist zum einen, die fortdauernde Notwendigkeit von Veränderung und Anpassung in der Elternarbeit zu betonen, aber auch die zunehmende Signifikanz des Themas damit zu untermauern.
 
 Die zweite Aufgabe dieser Arbeit bestand darin, einen Einblick in die bisherigen, empirisch gestützten Erkenntnisse zu diesem Thema zu ermöglichen. Die Recherche zum aktuellen Forschungsstand hat ergeben, dass sich sowohl in der nationalen als auch in der internationalen Forschung wenig mit der Zusammenarbeit mit Familien in den Kindertageseinrichtungen aus der Sicht der Eltern beschäftigt wurde. Dies betrifft insbesondere den deutschsprachigen Raum.  Es finden sich insgesamt nur wenige empirische Studien in diesem Bereich. Die meisten davon sind zudem entweder wenig aktuell oder enthalten zu kleine Stichproben bzw. sind thematisch sehr eng angelegt. Auch im angloamerikanischen Sprachraum beschäftigen sich die meisten Untersuchungen kaum mit der Zusammenarbeit mit Familien im regulären Kindergartenalltag. Sie sind eher auf die Evaluation von Elternkursprogrammen in Kindergärten, auf die Zusammenarbeit in der Schule oder in der Kinderpsychotherapie ausgerichtet.  
 Eine fundierte wissenschaftliche Auseinandersetzung mit der Thematik fehlt also nach wie vor trotz der wachsenden Bedeutsamkeit des ausgewählten Themas.
 
 Aus diesem Grund liegt der Interessenschwerpunkt der vorliegenden Arbeit darin, den Lesern und Leserinnen die Relevanz und Notwendigkeit der Erziehungs- und Bildungspartnerschaft in den Kindertageseinrichtungen aufzuzeigen und damit zu einer intensiveren Auseinandersetzung mit dem Thema in der wissenschaftlichen Forschung anzuregen.
 	
-Der empirische Teil der Arbeit befasst sich mit einer explorativen Untersuchung zum Thema "`Zusammenarbeit mit Familien in Kindertageseinrichtungen"', die im Rahmen des Projekts "`FRÖBEL-Eltern- und Mitarbeiter/-innenbefragung 2013"' durchgeführt wurde. Das Interesse an den FRÖBEL-Kindergärten und deren Zusammenarbeit mit den Familien wurde während meines dreimonatigen Praktikums bei dem gemeinnützigen Verein FRÖBEL e.V\footnote{Der FRÖBEL e.V. ist ein anerkannter Träger der Jugendhilfe und betreibt Krippen, Kindergärten und Horte sowohl national (in mehreren Bundesländern Deutschlands) als auch international (Türkei, Australien). Aktuell werden ca. 12.000 Kinder in über 130 Einrichtungen betreut.} geweckt und im Laufe der Praktikumstätigkeiten, die vorwiegend im Bereich Qualitätsentwicklung in den Kindertageseinrichtungen lagen, in hohem Maße verstärkt.
+Der empirische Teil der Arbeit befasst sich mit einer explorativen Untersuchung zum Thema "`Zusammenarbeit mit Familien in Kindertageseinrichtungen"', die im Rahmen des Projekts "`FRÖBEL-Eltern- und Mitarbeiter/-innenbefragung 2013"' durchgeführt wurde. Das Interesse an den FRÖBEL-Kindergärten und deren Zusammenarbeit mit den Familien wurde während meines dreimonatigen Praktikums bei dem gemeinnützigen Verein FRÖBEL e.V.\footnote{Der FRÖBEL e.V. ist ein anerkannter Träger der Jugendhilfe und betreibt Krippen, Kindergärten und Horte sowohl national (in mehreren Bundesländern Deutschlands) als auch international (Türkei, Australien). Aktuell werden ca. 12.000 Kinder in über 130 Einrichtungen betreut.} geweckt und im Laufe der Praktikumstätigkeiten, die vorwiegend im Bereich Qualitätsentwicklung in den Kindertageseinrichtungen lagen, in hohem Maße verstärkt.
 
 In Anbetracht dessen, dass es speziell zu dem Thema "`Zusammenarbeit zwischen den Eltern und pädagogischen Fachkräften in FRÖBEL-Kin"-der"-ta"-ges"-ein"-rich"-tungen"' bislang keine Forschungsergebnisse gibt, ist das zentrale Ziel dieser Arbeit, zu untersuchen, wie die Zusammenarbeit in den FRÖBEL-Kindergärten durch die Eltern bewertet wird. Im Vordergrund stehen die Fragen:
+\pagebreak
 \begin{enumerate}
 \item \textit{"`Wie schätzen die Eltern die Zusammenarbeit zwischen den pädagogischen Fachkräften und Familien in den FRÖBEL-Kin"-der"-ta"-ges"-ein"-rich"-tungen ein?"'}
 \item \textit{"`Welche homogenen Dimensionen (thematische Subkategorien) lassen sich in der Subskala "`Zusammenarbeit mit Familien"' des FRÖBEL-El"-tern"-fra"-ge"-bo"-gens herausbilden?"'}
@@ -167,18 +285,17 @@ Insbesondere betonte Fröbel die Rolle der Mutter mit ihren Eigenschaften, die f
 	
 	Erst seit den 90er Jahren wird der Zusammenarbeit mit den Eltern eine wachsende Bedeutung eingeräumt, wie beispielsweise das folgende Zitat zeigt:	
 \begin{quote}
-\begin{spacing}{1.7}
+\begin{doublespace}
  Elternarbeit gehört in den Aufgabenbereich aller Institutionen, die 	sich mit der	außerschulischen und schulischen Betreuung von 	Kindern und Jugendlichen  befassen. [...] Da eine isoliert von den 	Eltern verlaufende institutionelle Kindererziehung weniger 	erfolgversprechend ist, muss also das Elternhaus in die Arbeit 	der jeweiligen Institution einbezogen werden. So ergibt sich ein 	Dreieckverhältnis aus Eltern, Kindern und Mitarbeitern der 	Einrichtung. Die Zusammenarbeit mit den Eltern ist zum Wohle 	der Kinder unbedingt notwendig.~\parencite[S.~238-239]{Becker}
-\end{spacing}
+\end{doublespace}
 \end{quote}
-	Die gesichteten Quellen zeigen sehr deutlich, dass sich in den letzten zwanzig Jahren die Einstellung zur Zusammenarbeit mit Familien grundlegend gewandelt hat. Es werden im pädagogischen Alltag bewusst mehr Räume für eine konstruktive Zusammenarbeit geschaffen und Eltern werden zunehmend als Erziehungspartner anerkannt. In der Kooperation mit den Eltern hat sich nicht nur inhaltlich etwas verändert, sondern auch begriffliche Änderungen haben stattgefunden. In der Elementar- und Kindergartenpädagogik etabliert sich immer mehr der Begriff der \textit{"`Erziehungspartnerschaft"'}, der als Leitbild für die Zusammenarbeit mit Familien verstanden wird:
+Die gesichteten Quellen zeigen sehr deutlich, dass sich in den letzten zwanzig Jahren die Einstellung zur Zusammenarbeit mit Familien grundlegend gewandelt hat. Es werden im pädagogischen Alltag bewusst mehr Räume für eine konstruktive Zusammenarbeit geschaffen und Eltern werden zunehmend als Erziehungspartner anerkannt. In der Kooperation mit den Eltern hat sich nicht nur inhaltlich etwas verändert, sondern auch begriffliche Änderungen haben stattgefunden. In der Elementar- und Kindergartenpädagogik etabliert sich immer mehr der Begriff der \textit{"`Erziehungspartnerschaft"'}, der als Leitbild für die Zusammenarbeit mit Familien verstanden wird:
 \begin{quote}
-\begin{spacing}{1.7}
+\begin{doublespace}
 Erziehungspartnerschaft meint die gemeinsame Verantwortung von Eltern, Lehrer/-innen und Erzieher/-innen für die Erziehung des jeweiligen Kindes. Sie realisiert sich in einem dynamischen Kommunikationsprozess, in einem Dialog. Die wechselseitige Öffnung von Familie und Kindertagesstätte bzw. Schule setzt gegenseitiges Vertrauen und Respekt voraus - Haltungen, die sich auch auf das Kind positiv auswirken: Erlebt das Kind, dass die Pädagog/innen seine Familie wertschätzen, wird es eher Selbstachtung entwickeln. Merkt es, dass seine Eltern die Lehrer/innnen bzw. Erzieher/innen respektieren, fördert dies den pädagogischen Bezug und die Lernmotivation. \parencite{Textor_oJ}
-\end{spacing}
+\end{doublespace}
 \end{quote}
-	
-	Da das Thema Bildung von Kindertageseinrichtungen und Familien für die Zusammenarbeit eine ebenso große Rolle spielt, wurde der Begriff \textit{"`Erziehungspartnerschaft"'} um den Begriff der \textit{"`Bildungspartnerschaft"'} erweitert. Die \textit{"`Er"-zie"-hungs- und Bildungspartnerschaft"'} entspricht einer Erweiterung des Konzepts der traditionellen Elternarbeit und betont weniger den hierarchischen und belehrenden Charakter, sondern hebt das gemeinsame Ziel  der Er"-zie"-her"-innen und der Eltern - die Förderung des Wohlergehens und der Entwicklung des Kindes - hervor. Dabei gerät der Begriff \textit{"`Elternarbeit"'} in den pädagogischen Fachdiskussionen immer mehr in Vergessenheit und gilt als überholt.
+Da das Thema Bildung von Kindertageseinrichtungen und Familien für die Zusammenarbeit eine ebenso große Rolle spielt, wurde der Begriff \textit{"`Erziehungspartnerschaft"'} um den Begriff der \textit{"`Bildungspartnerschaft"'} erweitert. Die \textit{"`Er"-zie"-hungs- und Bildungspartnerschaft"'} entspricht einer Erweiterung des Konzepts der traditionellen Elternarbeit und betont weniger den hierarchischen und belehrenden Charakter, sondern hebt das gemeinsame Ziel  der Er"-zie"-her"-innen und der Eltern - die Förderung des Wohlergehens und der Entwicklung des Kindes - hervor. Dabei gerät der Begriff \textit{"`Elternarbeit"'} in den pädagogischen Fachdiskussionen immer mehr in Vergessenheit und gilt als überholt.
 	
 Martin R. Textor, der den Begriff\textit{"`Erziehungs- und Bildungspartnerschaft"'} entscheidend mitgeprägt hat, erklärt die Unterschiede zwischen den Begriffen folgendermaßen: beim traditionellen Begriff \textit{"`Elternarbeit"'} wird die einseitige Beeinflussung der Eltern durch die Er"-zie"-her"-innen (kompetente Fachkraft – inkompetente Eltern) impliziert. Die Konsequenzen daraus sind entweder ein hierarchisches Verhältnis oder eine Dienstleister-Kunden-Beziehung. Eine partnerschaftliche Verantwortung für die Erziehung, Betreuung und Bildung der Kinder ist nicht beabsichtigt. Dagegen geht es bei der \textit{"`Erziehungs- und Bildungspartnerschaft"'} um die sehr umfassende Kooperation von allen am Bildungs- und Erziehungsprozess Beteiligten beim gemeinsamen Aufbau einer lern- und entwicklungsfördernden Umgebung für Kinder und Jugendliche~\parencite{Textor_oJ}.
 
@@ -203,18 +320,18 @@ Sicherlich findet diese Kritik ihre Berechtigung, denn die Erziehungs- und Bildu
 	Der geschichtliche Rückblick auf die Zusammenarbeit mit Familien hat veranschaulicht, dass es einen erheblichen Wandel in diesem Bereich gegeben hat. Es wurde deutlich gemacht, dass die Zusammenarbeit im Sinne einer Erziehungspartnerschaft kein neu erfundenes Konzept der vorschulischen Einrichtungen ist, sondern bereits seit einigen Jahrzehnten teilweise erfolgreich praktiziert wird.
 	
 \section{Rechtliche Grundlagen und Rahmenrichtlinien der Bundesländer zur Förderung der Er"-zie"-hungs- und Bildungspartnerschaften}
-
+\label{recht}
 Im folgenden Kapitel werden die gesetzliche Sichtweise sowie die Rahmenrichtlinien der Bundesländer bezüglich der Erziehungs- und Bildungspartnerschaft von Kindertageseinrichtungen und Familien vorgestellt.
 Im Jahre 1990 wurden viele Aspekte der Zusammenarbeit mit den Eltern auch gesetzlich verankert. Das bedeutet, dass die Zusammenarbeit zwischen den Eltern und den frühpädagogischen Bildungsinstitutionen, wie Kindergärten, nicht nur aus pädagogischer Sicht notwendig, sondern auch vom Gesetz geregelt ist. Weiterhin ist die Zusammenarbeit mit Familien in fast allen Bildungsplänen beschrieben und mittlerweile ist der Bereich "`Zusammenarbeit mit Familien"' bzw. "`Erziehungs- und Bildungspartnerschaft"' in fast allen Konzeptionen der Kindertageseinrichtungen vertreten~\parencite[S.~80]{Thiersch_2006}.
 
-	Das Kinder- und Jugendhilfegesetz (KJHG) gibt bezüglich der Erziehungs- und Bildungspartnerschaft der Kindertageseinrichtungen mit den Eltern folgende Hinweise:
+	Das Kinder- und Jugendhilfegesetz (KJHG) gibt bezüglich der Erziehungs- und Bildungspartnerschaft der Kindertageseinrichtungen mit den Eltern folgende Hinweise (SGB VIII):
 	\begin{quote}
-	\begin{spacing}{1.7}
-§1 (2)    Pflege und Erziehung der Kinder sind das natürliche Recht der    	     	  Eltern und die zuvörderst ihnen obliegende Pflicht. [...]\\
-§9     Bei der Ausgestaltung der Leistungen und der Erfüllung der    Aufgaben […]  (ist)  […] die von den Personensorgeberechtigten bestimmte Grundausrichtung der  Erziehung […] zu beachten.\\
-§22 (2)   Das Leistungsangebot soll sich pädagogisch und organisatorisch 	   an den Bedürfnissen der Kinder und ihrer Familien orientieren.
-§22 (3)   Bei der Wahrnehmung ihrer Aufgaben sollen die in den  	   	  	  Einrichtungen tätigen Fachkräfte und anderen Mitarbeiter 	  	 mit den Erziehungsberechtigten zum Wohl der Kinder 		zusammenarbeiten. Die Erziehungsberechtigten sind an den 	Entscheidungen in wesentlichen Angelegenheiten der Tageseinrichtung zu beteiligen. \parencite{SGB_8}
-\end{spacing}
+	\begin{doublespace}
+§1 (2)    Pflege und Erziehung der Kinder sind das natürliche Recht der    	     	  Eltern und die zuvörderst ihnen obliegende Pflicht. \textellipsis\\
+§9     Bei der Ausgestaltung der Leistungen und der Erfüllung der    Aufgaben \textellipsis{}  (ist) \textellipsis{} die von den Personensorgeberechtigten bestimmte Grundausrichtung der  Erziehung \textellipsis{} zu beachten.\\
+§22 (2)   Das Leistungsangebot soll sich pädagogisch und organisatorisch 	   an den Bedürfnissen der Kinder und ihrer Familien orientieren.\\
+§22 (3)   Bei der Wahrnehmung ihrer Aufgaben sollen die in den  	   	  	  Einrichtungen tätigen Fachkräfte und anderen Mitarbeiter 	  	 mit den Erziehungsberechtigten zum Wohl der Kinder 		zusammenarbeiten. Die Erziehungsberechtigten sind an den 	Entscheidungen in wesentlichen Angelegenheiten der Tageseinrichtung zu beteiligen.
+\end{doublespace}
 \end{quote}
 Aus diesen drei Paragraphen geht hervor, dass die Eltern bei der Gestaltung des Betreuungsangebotes, der Förderung, der Bildung und der Erziehung der Kinder zu beteiligen sind. Sie sind für die ganzheitliche Entwicklung ihrer Kinder mitverantwortlich. Deshalb sollten frühpädagogische Institutionen Eltern aktiv in ihren Bildungs- und Erziehungsaufgaben unterstützen und ergänzen, ohne sie ersetzen zu wollen.
 
@@ -270,7 +387,7 @@ Neben den Studien, die den großen Wunsch und die Notwendigkeit der Fortbildunge
 Dies lässt den Schluss zu, dass sich die Fortbildungen zu der Thematik alles in allem als sehr hilfreich erwiesen haben. Die höher analysierten Untersuchungen bestätigen abermals, dass durch die Fortbildungen die Erzieher/-innen darin unterstützt werden können, den gestiegenen Anforderungen nachzugehen. Die Weiterbildungsmaßnahmen können einen wichtigen Beitrag zur Entwicklung der engen und respektvollen Zusammenarbeit zwischen den pädagogischen Fachkräften und Eltern in den Kindertageseinrichtungen leisten. Dabei ist für eine partnerschaftliche Zusammenarbeit insbesondere eine positive, offene Haltung der pädagogischen Fachkräfte den Eltern gegenüber und auch vice versa entscheidend.
 
 \subsection{Enge Zusammenarbeit mit den Eltern als Voraussetzung für den Erfolg der Förder- und Prä"-ven"-tions"-pro"-gramme in den Kindergärten}
-
+\label{prog}
 In den vorherigen Abschnitten wurde die Wichtigkeit der fundierten Kenntnisse im Bereich der Erziehungs- und Bildungspartnerschaft sowohl für die pädagogischen Fachkräfte als auch für die Eltern deutlich gemacht: beide Akteure profitieren in hohem Maße davon. In diesem Abschnitt richtet sich das Hauptaugenmerk auf die wichtigsten Teilnehmer in dieser Dreieckbeziehung – auf die Kinder.
 
 Gerade die neuere Resilienzforschung zeigt auf, dass sogar widerstandsfähige Kinder nicht allein aus ihren Stärken heraus heutige Risikolagen\footnote{Z.B. soziales Risiko, finanzielles Risiko, bildungsfernes Elternhaus etc.} bewältigen können. Sie benötigen die Unterstützung der Eltern und Erzieher/-innen, welche nur bei einer gut funktionierenden Erziehungs- und Bildungspartnerschaft optimal gewährleistet werden kann~\parencite[S.~33]{Aichinger_2011}. Aus diesem Grund kann und soll das Wissen der Eltern über ihre Kinder von den Kindertageseinrichtungen intensiv genutzt werden, um darauf aufbauende individuelle Bildungs- und Erziehungsarbeit zu leisten. Ausreichende Kenntnisse über die Interessen, Stärken, Wünsche und Fähigkeiten einer Familie bilden - insbesondere bei nicht intakten Familien - eine wichtige Voraussetzung für die bestmögliche Förderung und Unterstützung der Kinder.
@@ -301,16 +418,16 @@ Nach dem sozial-ökologischen Modell lassen sich folgende Ökosysteme differenzi
 \begin{figure}[h]
 \caption{Die Systemebenen des Ökosystems bei Bronfenbrenner (\href{https://de.wikipedia.org/wiki/Datei:\%C3\%96kosystemBronfenbrenner.jpg}{Wikipedia.org}, unter GNU-FDL CC BY-SA 3.0).}
 \centering
-\includegraphics[scale=0.6]{figures/OekosystemBronfenbrenner}
+\includegraphics[scale=0.68]{figures/OekosystemBronfenbrenner}
 \label{fig_bronf}
 \end{figure}
-
+\pagebreak
 \begin{quote}
-\begin{spacing}{1.7}
+\begin{doublespace}
 %\blockquote{
 Ein Mikrosystem ist ein Muster von Tätigkeiten und Aktivitäten, Rollen und zwischen-menschlichen Beziehungen, das die in Entwicklung begriffene Person in einem gegebenen Lebensbereich mit seinen eigentümlichen physischen und materiellen Merkmalen erlebt. Ein Lebensbereich ist ein Ort, an dem Menschen leicht direkte Interaktion mit anderen aufnehmen können.~\parencite[S.~38]{Bronfenbrenner}
 %}
-\end{spacing}
+\end{doublespace}
 \end{quote}
 Demnach definieren Mikrosysteme die unmittelbare Lernumwelt des sich entwickelnden Kindes. Eine Kindergartengruppe beispielsweise kann als Mikrosystem charakterisiert werden, in das Kinder und Erzieher/-innen einbezogen sind. In den meisten Fällen durchlaufen Kinder im Vorschulalter zwei Mikrosysteme, die einen bedeutsamen Einfluss auf ihre Entwicklung haben. Das sind erfahrungsgemäß zum einen die Familie und zum anderen eine Kindertageseinrichtung. Weiterführend sind die Mikrosysteme in Kontexte eingebunden, die zunehmend umfassender werden und als Meso-, Exo- und Makrosysteme bezeichnet werden\footnote{Für die vorliegende Arbeit sind nur das Mikro- und Mesosystem interessant. Diese Begriffe werden auf den folgenden Seiten ausführlicher erläutert. Auf die weiteren Systemebenen (Exo- und Makrosystem) wird im Folgenden nicht mehr eingegangen. An dieser Stelle sei lediglich auf die entsprechende Literatur verwiesen, \textcite{Bronfenbrenner}.}. 
 
@@ -326,10 +443,11 @@ Die Theorie von Bronfenbrenner steht somit im Einklang mit den Ergebnissen von d
 
 Die bisherigen Ausführungen haben verdeutlicht, dass der gestiegene Stellenwert der Zusammenarbeit zwischen pädagogischen Fachkräften und Eltern in den letzten Jahrzehnten auf unterschiedliche Gründe zurückzuführen ist.
 
-\section{Empirische Forschungsergebnisse}  
+\section{Empirische Forschungsergebnisse} 
+\label{forsch} 
 Das vorliegende Kapitel widmet sich den empirischen Befunden zum Thema "`Bil"-dungs- und Erziehungspartnerschaft in den Kindertageseinrichtungen"' sowohl auf der nationalen als auch auf der internationalen Ebene. Die Recherche hat ergeben, dass sich insgesamt nur wenige empirische Studien in diesem Bereich finden. Dies betrifft insbesondere den deutschsprachigen Raum. Die meisten Studien sind entweder wenig aktuell, d.h. sie wurden hauptsächlich im Zeitraum von 1980 bis 2002 durchgeführt oder enthalten zu kleine Stichproben bzw. sind thematisch sehr eng angelegt. Auch zu der Umsetzung der Rahmenrichtlinien der Bundesländer in den Kindergärten sowie zur Wirksamkeit unterschiedlicher Formen der Elternarbeit gibt es so gut wie keine aktuellen Untersuchungen.
 
-	Was die Effekte einer aktiven Zusammenarbeit zwischen Fachkräften und Eltern auf die Entwicklung der Kinder betrifft, wurden diese bislang wenig erforscht. Im deutschsprachigen Raum gibt es kaum Längsschnittuntersuchungen, die diese Frage beantworten könnten. In Anbetracht dessen, dass die Entwicklung der Kinder von zahlreichen Faktoren beeinflusst wird, überrascht das jedoch nicht. Mögliche Effekte einer Zusammenarbeit zwischen Eltern und pädagogischen Fachkräften lassen sich empirisch nur schwer nachweisen. Dennoch liefern einige Studien, vor allem aus den USA, Belege für den positiven Effekt eines Besuchs von Familien unterstützenden Institutionen. Wie beispielsweise die im Abschnitt 4.3 erwähnten \textit{"`Perry Preschool Project"', "`Effective Provision of Pre-School"'} (EPPE) sowie die Hamburger Sprachentwicklungslängsschnittstudien.
+	Was die Effekte einer aktiven Zusammenarbeit zwischen Fachkräften und Eltern auf die Entwicklung der Kinder betrifft, wurden diese bislang wenig erforscht. Im deutschsprachigen Raum gibt es kaum Längsschnittuntersuchungen, die diese Frage beantworten könnten. In Anbetracht dessen, dass die Entwicklung der Kinder von zahlreichen Faktoren beeinflusst wird, überrascht das jedoch nicht. Mögliche Effekte einer Zusammenarbeit zwischen Eltern und pädagogischen Fachkräften lassen sich empirisch nur schwer nachweisen. Dennoch liefern einige Studien, vor allem aus den USA, Belege für den positiven Effekt eines Besuchs von Familien unterstützenden Institutionen. Wie beispielsweise die im Abschnitt~\ref{prog} erwähnten \textit{"`Perry Preschool Project"', "`Effective Provision of Pre-School"'} (EPPE) sowie die Hamburger Sprachentwicklungslängsschnittstudien.
 	
 Im Rahmen der internationalen Forschung liegen zwar diverse Studien zu diesem Thema vor, allerdings wurden die meisten davon innerhalb von Modellprojekten bzw. gezielten Förderprogrammen durchgeführt. Außerdem haben die Studien vorwiegend einen zeitlich befristeten Projektcharakter und nur wenige der Projekte sind wirklich evaluiert. Zudem beschäftigen sich die meisten Untersuchungen kaum mit der Zusammenarbeit mit Familien im regulären Kindergartenalltag.
 
@@ -344,6 +462,7 @@ Aus den Studien wird der Wunsch der Eltern nach Optimierung der Zusammenarbeit d
 
 
 \subsection{Elternzufriedenheit und Partizipation der Eltern}
+\label{fragestellungen}
 Eine Reihe von Studien, in denen Eltern und Erzieher/-innen in Einzeluntersuchungen oder gemeinsam zu ähnlichen Themen befragt wurden, kommen weitgehend übereinstimmend zu dem Ergebnis, dass Eltern zum großen Teil mit dem Kindergarten und der Zusammenarbeit mit den Einrichtungen zufrieden sind~\parencite{Dippelhofer_1995, Textor_1992}. Diese Ergebnisse decken sich mit der Untersuchung von~\textcite{Wolf_2002}, die sich auf eine Befragung in den neuen Bundesländern aus den Jahren 1997 und 2001 bezieht. Die Untersuchung zeigte, dass Eltern überwiegend mit der Zusammenarbeit zwischen den pädagogischen Fachkräften und Familien zufrieden sind und eher selten Kritik an den Erzieher/-innen ausüben sowie ihre Arbeit schätzen und unterstützen~\parencite[S.~32-34]{Wolf_2002}.
 
 	Nach Einschätzung von Wolf liegt der mögliche Grund für diese hohe Zufriedenheit in der Scheu der Eltern, die Kindertageseinrichtung zu kritisieren, weil dies negative Konsequenzen für das Kind haben könnte. Beziehungsweise wollen sie die von ihnen ausgesuchte Einrichtung positiv sehen und sich deswegen auch mit einer wenig intensiven Zusammenarbeit zufrieden geben. Es gibt allerdings eine Gruppe von Eltern aus den sogenannten "`bildungsnahen"' Schichten, die oft Kritik am Kindergarten und vor allem an der Elternarbeit äußerten. Beide Kategorien der Eltern - sowohl zufriedene als auch unzufriedene - zeigten jedoch laut der Studie ein großes Interesse und Bereitschaft an der Mitarbeit in den Kindertageseinrichtungen~\parencite[S.~32-34]{Wolf_2002}.
@@ -357,6 +476,7 @@ Nach eigenen Aussagen von aktiven Elternvertreterinnen und -vertretern sind sie 
 Aus den bisher analysierten empirischen Forschungsergebnissen wird deutlich, dass die Forschungslage zum Thema "`Zusammenarbeit zwischen Familien und pädagogischen Fachkräften"' noch unbefriedigend ist. Wie bereits erwähnt, gibt es nur wenige aktuelle Untersuchungen, die sich ausschließlich mit der Einschätzung der Zusammenarbeit in Kindertageseinrichtungen im Alltag aus der Sicht der Eltern beschäftigen. In der vorliegenden Untersuchung wird ein Versuch unternommen, diese Forschungslücke mithilfe der FRÖBEL-Elternbefragung zu verringern. Über die Zusammenarbeit zwischen den Eltern und Erzieher/-innen in den FRÖBEL-Kindertageseinrichtungen liegen bislang keine Forschungsergebnisse vor.
 
 	Aus den dargestellten theoretischen Ausführungen und bezogen auf die herausgearbeiteten Forschungslücken lassen sich folgende Fragestellungen, die anschließend anhand der vorliegenden Daten untersucht werden, formulieren:
+	\pagebreak
 \begin{enumerate}
 
 \item \textit{ Wie schätzen die Eltern die Zusammenarbeit zwischen den pädagogischen Fachkräften und Familien in den FRÖBEL-Kin"-der"-ta"-ges"-ein"-rich"-tungen ein?}
@@ -368,17 +488,18 @@ Im folgenden empirischen Teil der Arbeit werden diese Fragestellungen näher unt
 \pagebreak
 \vspace*{\fill}
 \begin{Huge}
-Teil II: Empirische Analysen
+\begin{center}
+II: Empirischer Teil
+\end{center}
 \end{Huge}
 \vspace*{\fill}
 \pagebreak
 
-
+\section{Methodisches Vorgehen}
 Nachdem die Relevanz und Notwendigkeit der Erziehungs- und Bildungspartnerschaft in den Kindertageseinrichtungen aufgezeigt und diskutiert wurde, wird in dem empirischen Teil der Arbeit versucht, die vorhin formulierten Fragestellungen zu beantworten. Die vorliegende explorative Datenanalyse bezieht sich auf einen Teilausschnitt der gesamten Untersuchung im Rahmen des Projekts "`FRÖBEL-Eltern- und Mitarbeiter/-innenbefragung 2013"'. Und zwar   wird speziell die Subskala "`Zusammenarbeit mit Familien"' im Elternfragebogen untersucht.
 
 	Im ersten Abschnitt des folgenden Kapitels wird zunächst auf die Datengrundlage und die Stichprobe der vorliegenden Untersuchung näher eingegangen. Als nächstes wird das Instrument der Elternbefragung beschrieben. Im weiteren Schritt werden die Daten hinsichtlich der im vorherigen Kapitel formulierten Fragestellungen anhand von bestimmten Verfahren analysiert. Abschließend werden die Ergebnisse vorgestellt und diskutiert.
  
-\section{Methodisches Vorgehen}  
 \subsection{Datengrundlage und Stichprobe}
 Die Datengrundlage für die vorliegende Untersuchung bilden die 2579 Elternfragebögen aus dem Projekt "`FRÖBEL-Eltern- und Mitarbeiter/-in"-nen"-be"-fra"-gung 2013"'. Es handelt sich hierbei um eine querschnittlich angelegte Felduntersuchung, die als Online-Befragung im Zeitraum vom 18.02.2013 bis zum 11.03.2013 stattgefunden hat. Die Befragung wurde von der Fachabteilung \textit{"`Pädagogik und Qualitätsentwicklung"'} der FRÖBEL Management GmbH - eine Abteilung des FRÖBEL e.V. - unter der Koordination von Jule Marx und Annegret Kieschnick durchgeführt. Die Zielsetzung der Befragung bestand darin, Auskunft über den Ist-Stand der pädagogischen Arbeit in den Kindertageseinrichtungen zum Zeitpunkt der Befragung geben zu können. Dieser sollte als  Ausgangspunkt und Chance für die weitere Qualitätsentwicklung in der Kinderbetreuung dienen.
 
@@ -395,8 +516,8 @@ Der Elternfragebogen wurde von den Mitarbeiter/-innen der Fachabteilung \textit{
 	
 	Die einzelnen Items konnten von den Befragten auf einer vierstufigen Skala (4 = "`stimmt völlig"', 3 = "`stimmt eher"', 2 = "`stimmt eher nicht"', 1 = "`stimmt gar nicht"') eingeschätzt werden. Zusätzlich hatten die Eltern noch die Möglichkeit "`weiß nicht"' (98 = "`weiß nicht"') zu vergeben.
 	   
-	Um die im Kapitel 5 formulierten Fragestellungen präzise untersuchen zu können, werden im Folgenden die deskriptiven Analyseverfahren und daraus resultierenden Ergebnisse sowie die explorative Faktorenanalyse samt den Ergebnissen vorgestellt. Die explorative Faktorenanalyse stellt dabei das zentrale Verfahren der durchgeführten Untersuchung dar. Die Auswertung der Daten erfolgt mit der Statistiksoftware R. Alle Berechnungen sind dem Anhang XY beigefügt. %TODO
-
+	Um die im Abschnitt~\ref{fragestellungen} formulierten Fragestellungen präzise untersuchen zu können, werden im Folgenden die deskriptiven Analyseverfahren und daraus resultierenden Ergebnisse sowie die explorative Faktorenanalyse samt den Ergebnissen vorgestellt. Die explorative Faktorenanalyse stellt dabei das zentrale Verfahren der durchgeführten Untersuchung dar. Die Auswertung der Daten erfolgt mit der Statistiksoftware R. Alle Berechnungen sind dem Anhang XY beigefügt. %TODO
+\pagebreak
 \section{Ergebnisse}  
 \subsection{Deskriptiv-statistische Beschreibung der Daten}
 
@@ -505,7 +626,7 @@ Im Folgenden werden einige ausgewählte Häufigkeitsergebnisse präsentiert. Die
 	
 	Inwieweit die Beschwerden der Eltern von den Mitarbeiter/-innen laut der Befragungsergebnissen ernst genommen werden, konnte man anhand des Items 8.15 \textit{"`Die Mitarbeiter/-innen nehmen meine Beschwerden ernst"'} feststellen. Das Item schätzten die meisten Eltern (74\%) positiv ein. Immer noch 12\% sagen, dass ihre Beschwerden von den Mitarbeiter/-innen nicht ernst genommen werden. Auch bei diesem Item wählten einige Eltern (fast 14\%) die Antwortmöglichkeit "`weiß nicht"'.
 	
-	Weiterhin wäre es noch wichtig anzumerken, dass auch beim Item 8.14 \textit{"`Die Erzieher/-innen interessieren sich für meine Einschätzung ihrer Arbeit"'} fast 21\% der Befragten diese Aussage mit "`weiß nicht"' eingeschätzt haben. Dieses Ergebnis könnte auf unterschiedliche Gründe zurückgeführt werden. Näher wird darauf in der Diskussion (Kapitel 8) eingegangen.
+	Weiterhin wäre es noch wichtig anzumerken, dass auch beim Item 8.14 \textit{"`Die Erzieher/-innen interessieren sich für meine Einschätzung ihrer Arbeit"'} fast 21\% der Befragten diese Aussage mit "`weiß nicht"' eingeschätzt haben. Dieses Ergebnis könnte auf unterschiedliche Gründe zurückgeführt werden. Näher wird darauf in der Diskussion (Kapitel~\ref{disk}) eingegangen.
 	
  	Alles in allem sind knapp 85\% der Eltern mit der Zusammenarbeit zwischen den FRÖBEL-Kindergärten und den Familien zufrieden (Item 8.20). Ca. 13\% sind mit der Zusammenarbeit eher unzufrieden und nur 2\% haben dieses Item mit "`weiß nicht"' beantwortet.
  	
@@ -514,13 +635,14 @@ Im Folgenden werden einige ausgewählte Häufigkeitsergebnisse präsentiert. Die
 \begin{figure}[h]
 \caption{Bewertung der Zusammenarbeit zwischen pädagogischen Fachkräften und Familien durch die Eltern in FRÖBEL-Kin"-der"-ta"-ges"-ein"-rich"-tungen 2013 (in \%).}
 \centering
-\includegraphics[scale=0.65]{figures/freq_dist3}
+\includegraphics[scale=0.7]{figures/freq_dist3}
 \label{fig_freq}
 \end{figure}
 \FloatBarrier
 Die Häufigkeitsergebnisse zeigen, dass die Mehrheit der Antworten der Eltern im Bereich "`stimmt eher/stimmt völlig"' liegen. Es gibt zugleich einen Anteil der Eltern, die ihre Bewertung auf der Stufe "`stimmt eher nicht/stimmt eher"' vornehmen (max. liegt dieser Anteil bei 28.83\%). Bei einigen Items fällt interessanterweise relativ hoher Prozentsatz bei der Antwortmöglichkeit "`weiß nicht"' auf. Die möglichen Gründe für solche Bewertung der Eltern werden genauer im späteren Verlauf der Arbeit erläutert.
 
-\subsection{Korrelationsanalyse}  
+\subsection{Korrelationsanalyse}
+\label{korr}  
 Nachdem die Mittelwerte und die Häufigkeiten vorgestellt wurden, wird im Weiteren eine Korrelationsanalyse berechnet, um herauszufinden, inwiefern die einzelnen Variablen zusammenhängen. Die Zusammenhänge zwischen den Items sind für die weitere Durchführung der Faktorenanalyse, die das zentrale Analyseverfahren des empirischen Teils darstellt, ausschlaggebend. Die Ergebnisse der Korrelationsmatrix sind dem Anhang xy beigefügt.
 
 	Die Korrelationsmatrix zeigt, dass teilweise schwache von $r = .25$ bis starke von $r = .80$ Korrelationen zwischen den Variablen existieren. Insgesamt weisen die meisten Korrelationen einen mittleren bis hohen Zusammenhang auf. Selbst die schwachen Korrelationen sind mit $p < .000$ höchst signifikant. Hier muss allerdings angemerkt werden, dass die hohe Signifikanz ($p < .000$) aufgrund der Größe der Stichprobe ($N= 2.579$) zustande kommt. Die höchste Korrelation mit $r = .80, p < .000$ zeigen die Variablen 8.7 und 8.8, in denen die Wichtigkeit des Austausches zwischen den Erzieher/-innen und Eltern zu Erziehungsfragen thematisiert wird. Die Variablen 8.11 \textit{"`Eltern können sich durch ehrenamtliche Tätigkeiten in die pädagogische Arbeit einbringen"'} und 8.9 \textit{"`Wenn es meine Zeit erlaubt, halte ich mich gerne für eine gewisse Zeit in der Einrichtung auf"'} weisen hingegen den geringsten Zusammenhang mit allen anderen Variablen auf. Die Korrelationen von diesen beiden Items mit den anderen Items reichen von $r = .25$ bis $r = .61$.
@@ -528,7 +650,7 @@ Nachdem die Mittelwerte und die Häufigkeiten vorgestellt wurden, wird im Weiter
 	Das Ergebnis der vorgenommenen Korrelationsanalyse - signifikante mittlere bis hohe Zusammenhänge - bildet eine gute Grundlage für die Durchführung einer Faktorenanalyse, die im nächsten Kapitel vorgestellt wird.
 
 \subsection{Exploratorische Faktorenanalyse} 
-In diesem Kapitel wird die Fragestellung \textit{"`Welche homogenen Dimensionen  (thematische Subkategorien) lassen sich in der Itemskala "`Zusammenarbeit mit Familien"' herausbilden?"'} mittels einer exploratorischen Faktorenanalyse (EFA) untersucht.
+In diesem Abschnitt wird die Fragestellung \textit{"`Welche homogenen Dimensionen  (thematische Subkategorien) lassen sich in der Itemskala "`Zusammenarbeit mit Familien"' herausbilden?"'} mittels einer exploratorischen Faktorenanalyse (EFA) untersucht.
 
 	Die Grundidee der EFA ist die Datenreduktion. Es wird versucht, möglichst viele Informationen aus den ursprünglichen Daten durch eine kleinere Anzahl von Faktoren zu beschreiben. Weiterhin verfolgt die EFA das Ziel, Zusammenhänge zwischen Items auf latente Variablen zurückzuführen~\parencite[S.~180]{Buehner}.
 	
@@ -536,7 +658,7 @@ In diesem Kapitel wird die Fragestellung \textit{"`Welche homogenen Dimensionen 
 
 \subsubsection{Überprüfung der Dateneignung für eine Faktorenanalyse} 
 
-Bevor ein faktorenanalytisches Modell spezifiziert wird, wird zunächst mittels der Korrelationsanalyse die Eignung der Daten für die exploratorische Faktorenanalyse überprüft. Der Abschnitt 7.3 "`Korrelationsanalyse"' konnte bereits zeigen, dass alle Items mittlere bis hohe Zusammenhänge aufweisen und sich somit gut für die EFA eignen. Weitere wichtige Tests zur Überprüfung der Dateneignung für die EFA sind der \textit{KMO-Test}, der Anhaltspunkte gibt, ob die Itemauswahl für die exploratorische Faktorenanalyse verwendbar ist und der \textit{Barlett-Test auf Sphärizität}, der überprüft, ob Korrelationen zwischen den Items ausreichend stark sind. In der Tabelle 2 werden die Indizien von beiden Tests dargestellt.
+Bevor ein faktorenanalytisches Modell spezifiziert wird, wird zunächst mittels der Korrelationsanalyse die Eignung der Daten für die exploratorische Faktorenanalyse überprüft. Der Abschnitt~\ref{korr} "`Korrelationsanalyse"' konnte bereits zeigen, dass alle Items mittlere bis hohe Zusammenhänge aufweisen und sich somit gut für die EFA eignen. Weitere wichtige Tests zur Überprüfung der Dateneignung für die EFA sind der \textit{KMO-Test}, der Anhaltspunkte gibt, ob die Itemauswahl für die exploratorische Faktorenanalyse verwendbar ist und der \textit{Barlett-Test auf Sphärizität}, der überprüft, ob Korrelationen zwischen den Items ausreichend stark sind. In der Tabelle 2 werden die Indizien von beiden Tests dargestellt.
 
 
 \begin{table}
@@ -571,7 +693,7 @@ Im nächsten Schritt wird entschieden, wie viele Faktoren erforderlich sind, um 
 \begin{figure}[h]
 \caption{Scree-Plot (In der Legende sind die Eigenwertverläufe der Hauptkomponentenanalyse (PC) sowie der Faktorenanalyse (FA) dargestellt).}
 \centering
-\includegraphics[scale=0.9]{../R-Berechnungen/Rplot.pdf}
+\includegraphics[scale=0.9,width=10cm, height=9cm]{../R-Berechnungen/Rplot.pdf}
 \label{fig_scree}
 \end{figure}
 									
@@ -582,7 +704,7 @@ Aus dem \textit{Scree-Plot} wird deutlich, dass es möglich wäre, entweder eine
 \begin{figure}[h]
 \caption{Parallelanalyse.}
 \centering
-\includegraphics[scale=0.60]{../R-Berechnungen/Rplot02.pdf}
+\includegraphics[scale=0.50]{../R-Berechnungen/Rplot02.pdf}
 \label{fig_para}
 \end{figure}
 
@@ -634,7 +756,7 @@ Nachdem die Entscheidung über die Anzahl der zu extrahierenden Faktoren gefalle
 
 Im Prozess der Modellbildung wurden keine Items ausgeschlossen. Die Analyse der internen Konsistenz hat nicht bestätigt, dass der Ausschluss eines Items zu einer starken Erhöhung des Chronbachs-Alpha-Wertes führen würde. Dies zeigt, dass alle Items für die Repräsentation der Information, die in den Daten vorhanden ist, wichtig sind.
 
-	Alle Ladungen laden überwiegend gleichmäßig hoch sowie positiv auf dem Faktor. Die meisten Ladungen liegen im Bereich $a >.70$ und unterscheiden sich nur marginal voneinander. Daher kann von einer stabilen Lösung ausgegangen werden.
+	Alle Ladungen laden gleichmäßig hoch sowie positiv auf dem Faktor. Die meisten Ladungen liegen im Bereich $a >.70$ und unterscheiden sich nur marginal voneinander. Daher kann von einer stabilen Lösung ausgegangen werden.
 	
 	Besonders hohes Gewicht auf dem Faktor weist das Item 8.14 \textit{"`Die Erzieher/-innen interessieren sich für meine Einschätzung ihrer Arbeit"'} mit $a= .82$ auf. Dieses zeigt die höchste Ladung, gefolgt vom Item 8.8 \textit{"`Ich merke, dass den ErzieherInnen der Austausch mit mir zu Erziehungsfragen wichtig ist"'}, welches mit $a = .81$ auf dem Faktor lädt.
 	Die geringsten Ladungen weisen drei folgende Items auf: das Item 8.9 \textit{"`Wenn es meine Zeit erlaubt, halte ich mich gerne für eine gewisse Zeit in der Einrichtung auf"'} mit $a = .52$, das Item 8.11 \textit{"`Eltern können sich durch ehrenamtliche Tätigkeiten in die pädagogische Arbeit einbringen"'} mit $a = .55$ und das Item 8.3 \textit{"`Die Einrichtungsleitung hat für mich immer ein offenes Ohr"'} mit $a = .66$.   
@@ -644,11 +766,12 @@ Im Prozess der Modellbildung wurden keine Items ausgeschlossen. Die Analyse der 
 	Anschließend wurde aus den jeweiligen Items der Subskala durch Mittelwertbildung der Gesamtskalenwert gebildet. Dieser beläuft sich auf  $M = 3.2$ mit einer Standardabweichung von $SD = .49$ und weist mit dem hohen Chronbachs-Alpha-Wert von $\alpha$ $= .899$ auf eine sehr gute Reliabilität der Skala hin.
 	Das Ergebnis der Hauptkomponentenanalyse kann als Basis für weiterführende Analysen dienen, beispielsweise für eine Regressionsanalyse.
 	
-An dieser Stelle sei angemerkt, dass in der Praxis nur selten mehrere Methoden, die in dieser Arbeit zur Bestimmung der optimalen Anzahl der Faktoren zum Einsatz gekommen sind, angewandt werden. Man verwendet meist eine, höchstens zwei Methoden. In der Regel orientiert man sich bei der Entscheidung wie viele Faktoren zu extrahieren sind, zum einen an den \textit{Scree}-Testergebnissen bzw. an dem oft kritisierten \textit{Kaiser-Kriterium} (Eigenwerte $>1$), indem die Eigenwerte der Faktoren angeschaut werden. Das Ziel der vorliegenden Untersuchung bestand neben der Beantwortung der im Kapitel 5 formulierten Fragestellungen auch darin, die unterschiedlichen Methoden der Faktorenextraktion sowie die möglichen Vorgehensweisen aufzuzeigen, wenn die Ergebnisse bei der Bestimmung der optimalen Anzahl der Faktoren nicht wunschgemäß bzw. nicht eindeutig ausfallen.
+An dieser Stelle sei angemerkt, dass in der Praxis nur selten mehrere Methoden, die in dieser Arbeit zur Bestimmung der optimalen Anzahl der Faktoren zum Einsatz gekommen sind, angewandt werden. Man verwendet meist eine, höchstens zwei Methoden. In der Regel orientiert man sich bei der Entscheidung wie viele Faktoren zu extrahieren sind, zum einen an den \textit{Scree}-Testergebnissen bzw. an dem oft kritisierten \textit{Kaiser-Kriterium} (Eigenwerte $>1$), indem die Eigenwerte der Faktoren angeschaut werden. Das Ziel der vorliegenden Untersuchung bestand neben der Beantwortung der im Kapitel~\ref{forsch} formulierten Fragestellungen auch darin, die unterschiedlichen Methoden der Faktorenextraktion sowie die möglichen Vorgehensweisen aufzuzeigen, wenn die Ergebnisse bei der Bestimmung der optimalen Anzahl der Faktoren nicht wunschgemäß bzw. nicht eindeutig ausfallen.
 
 	Im folgenden Kapitel werden die wichtigsten Ergebnisse der vorliegenden Untersuchung zusammengefasst und diskutiert sowie in Verbindung mit den Befunden der bisherigen Studien zu der Thematik "`Erziehungs- und Bildungspartnerschaft"' zwischen den Eltern und pädagogischen Fachkräften in den Kindertageseinrichtungen gesetzt.
 
 \section{Diskussion der Ergebnisse}
+\label{disk}
 
 Neben der Aufgabe, den Lesern die Relevanz und Notwendigkeit der Er"-zie"-hungs- und Bildungspartnerschaft zwischen den Familien und pädagogischen Fachkräften aufzuzeigen sowie einen Einblick in die Forschungsbefundlage zu diesem Thema zu geben, bestand das Ziel der vorliegenden Untersuchung darin, mithilfe der empirischen Analysen zu veranschaulichen, wie die Zusammenarbeit zwischen den Familien und pädagogischen Fachkräften in den FRÖBEL-Kindertageseinrichtungen aus der Perspektive der Eltern beurteilt wird.  Weiterhin wurde anhand der exploratorischen Faktorenanalyse untersucht, welche homogenen Bereiche sich in der Itemskala "`Zusammenarbeit mit Familien"' herausbilden  lassen.
 
@@ -662,7 +785,8 @@ Rund 90\% der befragten Eltern haben dem Item 8.4 \textit{"`Ich kann mich über 
 	
 	Des Weiteren berichteten 81.3\% der Eltern, dass sie mit den Gesprächen zwischen den Eltern und Erzieher/-innen beim Bringen und Abholen zufrieden sind (Item 8.1). Die restlichen fast 19\% äußerten Kritik hierzu. Vor dem Hintergrund der Ergebnisse der bisherigen Untersuchungen, die deutlich machen, dass den Tür- und Angelgesprächen in der Zusammenarbeit mit Familien ein hohes Gewicht zukommt (vor allem beim Kontaktaufbau mit benachteiligten Familien), erscheint dieser Prozentsatz recht hoch zu sein. Ein möglicher Grund für die Unzufriedenheit der Eltern könnte sein, dass die Tür- und Angelgespräche nicht entsprechend ihren Wünschen und Vorstellungen verlaufen. An dieser Stelle wäre empfehlenswert, die individuellen Bedürfnisse und Erwartungen der Eltern bei den Tür- und Angelgesprächen noch stärker zu berücksichtigen. Die regelmäßigen Gespräche schaffen eine Vertrauensbasis und bilden somit die Grundlage für die gute Erziehungs- und Bildungspartnerschaft.
 	
-Mit deutlichem Abstand zu den oben vorgestellten Items, aber bei immer noch relativ hohem Zustimmungsgrad, sehen 55\% der Eltern die Erzieher/-innen als Ansprechpartner/-innen in Erziehungsfragen: \textit{"`Die MitarbeiterInnen sind für mich AnsprechpartnerInnen in Erziehungsfragen"'}. Jedoch sieht immerhin fast die Hälfte der Eltern (40\%) das anders und schätzt diese Aussage eher als nicht zutreffend ein. Dieses Ergebnis unterscheidet sich deutlich von den bereits erwähnten Befunden der Untersuchung "`Stärkung der Familie durch und über den Kindergarten"'. Laut dieser Studie sind für 80\% der befragten Eltern die Erzieher/-innen nach den (Ehe-) Partner/-innen die wichtigsten Ansprechpersonen für Erziehungsfragen~\parencite[S.~10]{Froelich}. 
+Mit deutlichem Abstand zu den oben vorgestellten Items, aber bei immer noch relativ hohem Zustimmungsgrad, sehen 55\% der Eltern die Erzieher/-innen als Ansprechpartner/-innen in Erziehungsfragen: \textit{"`Die MitarbeiterInnen sind für mich AnsprechpartnerInnen in Erziehungsfragen"'}. Jedoch sieht immerhin fast die Hälfte der Eltern (40\%) das anders und schätzt diese Aussage eher als nicht zutreffend ein. Dieses Ergebnis unterscheidet sich deutlich von den bereits %TODO
+erwähnten Befunden der Untersuchung "`Stärkung der Familie durch und über den Kindergarten"'. Laut dieser Studie sind für 80\% der befragten Eltern die Erzieher/-innen nach den (Ehe-) Partner/-innen die wichtigsten Ansprechpersonen für Erziehungsfragen~\parencite[S.~10]{Froelich}. 
  
 Dass der ziemlich hohe Anteil der Eltern (40\%) die Erzieher/-innen nicht als Ansprechpartner/-innen in Erziehungsfragen sehen, könnte einerseits damit zusammenhängen, dass der Erzieherberuf in unserer Gesellschaft nach wie vor, trotz einer gewissen gesellschaftlichen Tendenz zur Aufwertung, ein geringes Ansehen erfährt. Erzieher/-innen werden oft lediglich als Betreuer/-innen bzw. Aufpasser/-innen gesehen, aber wenig als professionelle pädagogische Fachkräfte anerkannt. Die fachlichen Kompetenzen der Erzieher/-innen werden immer noch von vielen in Frage gestellt. 
 
@@ -683,7 +807,7 @@ An dieser Stelle wäre anzuraten, dass die pädagogischen Fachkräften verstärk
 	
 Zum anderen könnte der hohe Prozentsatz von "`weiß nicht"' Antworten darauf hindeuten, dass von der Einrichtung solche Möglichkeiten nicht angeboten  bzw. die Eltern nicht ausreichend darüber informiert werden. Dies würde jedoch den in der FRÖBEL-Rahmenkonzeption gestellten Anforderungen an die Kindertageseinrichtungen widersprechen: "`Die Förderung ehrenamtlichen Engagements gehört [...] zum Selbstverständnis jeder FRÖBEL-Einrichtung […]"'~\parencite[S.~28]{Kieschnick}. Hier gilt es ebenso wie im Falle der Entwicklungsgespräche, den Eltern aufzuzeigen und bewusst zu machen, wie wichtig es für die weitere erfolgreiche Entwicklung der Zusammenarbeit ist, sich am Bildungsort ihres Kindes zu beteiligen. Deshalb sollten Eltern zur ehrenamtlichen Mitwirkung ermutigt und unterstützt werden. Dies kann gefördert werden, indem man ihnen zum Beispiel angemessene Aufgaben zutraut und explizit anbietet. 
 
-	Was die Hospitation anbelangt, wird in der Rahmenkonzeption des Trägers (siehe Kapitel 3) betont, dass die Eltern immer willkommen sind, in der Einrichtung zu hospitieren. Dieser Aussage stimmte über die Hälfte der Eltern (58\%) zu. 17\% gaben an, sie fühlen sich eher nicht oder gar nicht willkommen, in der Einrichtung zu hospitieren. Ein Viertel der Eltern bewertete dieses Item mit "`weiß nicht"'. In der Antwortskala "`weiß nicht"'hebt sich dieses Item mit dem größten Prozentwert von den anderen Items ab. Diese Befunde legen mehrere Erklärungsannahmen nahe. Zum einen ist es denkbar, dass die Eltern über die Möglichkeit zur Hospitation in den Einrichtungen nicht ausreichend informiert sind. Dies kann einerseits daran liegen, dass die Eltern selbst an einer Hospitation kein Interesse haben. Andererseits kann das darauf hindeuten, dass die Hospitation seitens des pädagogischen Personals nicht wirklich erwünscht ist, denn nicht jede/-r Erzieher/-in ist bereit, sich von den Eltern bei ihrer Arbeit beobachten zu lassen. Um dem Desinteresse, Informationsmangel aber auch eventueller Unsicherheit der Eltern entgegen zu wirken, sollte den Eltern verstärkt das Willkommensgefühl zur Hospitation vermittelt werden. Dadurch erhalten sie die Möglichkeit, den Alltag des eigenen Kindes mitzuerleben und aktiv zu bereichern. Damit wird Transparenz des erzieherischen Handelns geschaffen und infolgedessen die angestrebte, gesellschaftliche Anerkennung und Wertschätzung des Erzieherberufs erhöht. Dies bestätigt auch die Untersuchung von~\textcite{Froelich}. Laut den Ergebnissen dieser Studie bekamen die Eltern durch den Einbezug in die pädagogische Arbeit eine genauere Vorstellung und ein besseres Verständnis vom Kindergartenablauf. Aufgrund dessen sind der Respekt gegenüber den Erzieher/-innen sowie die eigene Beteiligung und Bereitschaft zur Unterstützung gestiegen~\parencite[S.~10]{Froelich}.
+	Was die Hospitation anbelangt, wird in der Rahmenkonzeption des Trägers (siehe Kapitel~\ref{recht}) betont, dass die Eltern immer willkommen sind, in der Einrichtung zu hospitieren. Dieser Aussage stimmte über die Hälfte der Eltern (58\%) zu. 17\% gaben an, sie fühlen sich eher nicht oder gar nicht willkommen, in der Einrichtung zu hospitieren. Ein Viertel der Eltern bewertete dieses Item mit "`weiß nicht"'. In der Antwortskala "`weiß nicht"'hebt sich dieses Item mit dem größten Prozentwert von den anderen Items ab. Diese Befunde legen mehrere Erklärungsannahmen nahe. Zum einen ist es denkbar, dass die Eltern über die Möglichkeit zur Hospitation in den Einrichtungen nicht ausreichend informiert sind. Dies kann einerseits daran liegen, dass die Eltern selbst an einer Hospitation kein Interesse haben. Andererseits kann das darauf hindeuten, dass die Hospitation seitens des pädagogischen Personals nicht wirklich erwünscht ist, denn nicht jede/-r Erzieher/-in ist bereit, sich von den Eltern bei ihrer Arbeit beobachten zu lassen. Um dem Desinteresse, Informationsmangel aber auch eventueller Unsicherheit der Eltern entgegen zu wirken, sollte den Eltern verstärkt das Willkommensgefühl zur Hospitation vermittelt werden. Dadurch erhalten sie die Möglichkeit, den Alltag des eigenen Kindes mitzuerleben und aktiv zu bereichern. Damit wird Transparenz des erzieherischen Handelns geschaffen und infolgedessen die angestrebte, gesellschaftliche Anerkennung und Wertschätzung des Erzieherberufs erhöht. Dies bestätigt auch die Untersuchung von~\textcite{Froelich}. Laut den Ergebnissen dieser Studie bekamen die Eltern durch den Einbezug in die pädagogische Arbeit eine genauere Vorstellung und ein besseres Verständnis vom Kindergartenablauf. Aufgrund dessen sind der Respekt gegenüber den Erzieher/-innen sowie die eigene Beteiligung und Bereitschaft zur Unterstützung gestiegen~\parencite[S.~10]{Froelich}.
 	
 	Ferner gaben 68\% der Eltern an, dass die wichtigen Entscheidungen gemeinsam mit den Eltern getroffen werden (Item 8.16). 20\% der Eltern, die zu dieser Aussage Stellung bezogen haben, stimmten dem nicht zu. 12\% der Eltern konnten dieses Item weder positiv noch negativ bewerten und wählten die Antwort "`weiß nicht"'. Dies könnte eventuell damit zusammenhängen, dass der Fragebogen von einem Elternteil ausgefüllt wurde, der sich eher wenig im Kindergarten seines Kindes beteiligt und deswegen nicht weiß, ob die wichtigen Entscheidungen zusammen mit den Eltern getroffen werden bzw. erachten die Eltern selbst es nicht für notwendig, sich an den Entscheidungen der Einrichtung zu beteiligen. Was die anderen 20\% anbetrifft, die dieser Aussage nicht zustimmten, könnte dies darauf hindeuten, dass sie möglicherweise bei wichtigen Entscheidungen seitens der Einrichtung nicht gerne einbezogen werden oder die Beteiligung nicht ganz ihren Wünschen und Vorstellungen entspricht. Die festgestellte Unzufriedenheit von einem Fünftel der befragten Eltern kann man als einen Indikator dafür betrachten, dass die im Kinder- und Jugendhilfegesetz sowie in den Bildungsplänen und in der FRÖBEL-Rahmenkonzeption geforderte elterliche Beteiligung an Entscheidungsprozessen in Kindertageseinrichtungen noch weiter ausgebaut werden könnte, falls seitens der Eltern diesbezüglich Interesse und Wunsch bestehen.
 	
@@ -700,25 +824,26 @@ Die Gründe für die sehr unterschiedliche Bewertung der Eltern können sehr vie
 	An dieser Stelle sei angemerkt, dass aufgrund der unzureichenden Forschungsbefundlagen zum Thema "`Zusammenarbeit mit Familien in Kindertageseinrichtungen"' nicht alle Annahmen mit empirisch abgesicherten Argumenten gestützt werden konnten.
 Neben der Auswertung der Einschätzung der Zusammenarbeit zwischen den Familien und pädagogischen Fachkräften in den FRÖBEL-Kindertageseinrichtungen durch die Eltern, ging der zweite Untersuchungsbereich der Frage nach: \textit{"`Welche homogenen Bereiche lassen sich in der Itemskala "`Zusammenarbeit mit Familien"' herausbilden"'}. Die Hauptkomponentenanalyse ermöglichte die Auswertung der vorliegenden Daten und hat eine eindimensionale Struktur des Fragebogens aufgezeigt. Das bedeutet, dass die Eltern ihre Einschätzungen bezüglich der Zusammenarbeit mit Familien in den FRÖBEL-Einrichtungen auf einer Dimension vornahmen. 
 
-Um weitere Dimensionen zu bekommen, wäre möglich/notwendig noch weitere Kategorien zum Thema abzufragen. Wie zum Beispiel ….
+Um weitere Dimensionen zu bekommen, wäre möglich/notwendig noch weitere Kategorien zum Thema abzufragen. Wie zum Beispiel …. %TODO
 	
 \section{Abschluss und Ausblick}
 	
-Der geschichtliche Rückblick auf die Entwicklung der Zusammenarbeit mit Familien in den Kindertageseinrichtungen hat veranschaulicht, dass die Zusammenarbeit mit Familien in den letzten Jahren eine grundlegende Wandlung erfahren hat und ein unabdingbarer Bestandteil der Arbeit in der heutigen Kindertageseinrichtung geworden ist. Zudem ist die Zusammenarbeit zwischen den Eltern und den frühpädagogischen Bildungsinstitutionen seit 1990 ausdrücklich gesetzlich geregelt. Dieses Thema ist ferner in fast allen Bildungs- und Erziehungsplänen der Bundesländer (teils sehr umfangreich) beschrieben.
- 
+Der geschichtliche Rückblick auf die Entwicklung der Zusammenarbeit mit Familien in den Kindertageseinrichtungen hat veranschaulicht, dass die Zusammenarbeit mit Familien in den letzten Jahren eine grundlegende Wandlung erfahren hat und ein unabdingbarer Bestandteil der Arbeit in der heutigen Kindertageseinrichtung geworden ist. Zudem ist die Zusammenarbeit zwischen den Eltern und den frühpädagogischen Bildungsinstitutionen seit 1990 ausdrücklich gesetzlich geregelt. Dieses Thema ist ferner in fast allen Bildungs- und Erziehungsplänen der Bundesländer (teils sehr umfangreich) beschrieben. 
+
 	Die Gründe für die Notwendigkeit der Bildungs- und Erziehungspartnerschaften in den Kindertageseinrichtungen sind vielfältig. Insbesondere ersichtlich wird die Wichtigkeit der Zusammenarbeit mit Familien aus dem sozial-ökologischen Ansatz von Bronfenbrenner. Der Ansatz betont ausdrücklich die Notwendigkeit einer engen Kooperation zwischen den beiden Lebensbereichen der Kinder (Familie und Kindertageseinrichtung), um die bestmögliche Entwicklung und Förderung des Kindes zu gewährleisten. Eine besonders hohe Relevanz hat die enge Kooperation zwischen den Eltern und pädagogischen Fachkräften, wenn es darum geht, durch die Kindertagesbetreuung die benachteiligten Familien zu fördern und zu unterstützen. Allgemein gilt in der fachlichen und wissenschaftlichen Diskussion ein "`gutes Verhältnis"' zwischen Kindergarten und Elternhaus als fördernd für das Aufwachsen der Kinder und als Qualitätskriterium für deren Betreuung~\parencite{Fthenakis_1998}.
 	
-	 Die vorangegangenen Ausführungen und Untersuchungsergebnisse geben zum einen den Eltern Auskunft darüber, ob und inwieweit eine FRÖBEL-Kindertageseinrichtung hinsichtlich der "`Zusammenarbeit mit Familien"' für sie einen attraktiven Kindergarten darstellt sowie allgemein ihren Bedürfnissen und Erwartungen entspricht. Zum anderen informieren die Ergebnisse der vorliegenden Untersuchung den Träger und die pädagogischen Fachkräfte über die Verbesserungsmöglichkeiten/-bedarfe im Bereich  "`Erziehungs- und Bildungspartnerschaft"' in ihren Kindertageseinrichtungen sowie über die bereits erzielten Erfolge.
+	 Die vorangegangenen Ausführungen und Untersuchungsergebnisse geben zum einen den Eltern Auskunft darüber, ob und inwieweit eine FRÖBEL-Kindertageseinrichtung hinsichtlich der "`Zusammenarbeit mit Familien"' für sie einen attraktiven Kindergarten darstellt sowie allgemein ihren Bedürfnissen und Erwartungen entspricht. Zum anderen informieren die Ergebnisse der vorliegenden Untersuchung den Träger und die pädagogischen Fachkräfte über die Verbesserungsmöglichkeiten/-bedarfe im Bereich "`Erziehungs- und Bildungspartnerschaft"' in ihren Kindertageseinrichtungen sowie über die bereits erzielten Erfolge.
 	 
 	Leider lassen sich in der durchgeführten Untersuchung keine Rückschlüsse auf den Bildungsstand der Eltern, den sozialökonomischen Status oder den Migrationshintergrund ziehen, da diese Aspekte im Fragebogen nicht erfasst wurden. Somit sind an dieser Stelle nur begrenzte Analysemöglichkeiten und Aussagen möglich. Daher können über eventuelle Faktoren, die die Einschätzung der Eltern bestimmen oder beeinflussen, lediglich Vermutungen angestellt  werden. 
 	
 	Ferner sei darauf hingewiesen, dass für die Beurteilung der Zusammenarbeit mit Familien die analysierte Skala aus 20 Items aus wissenschaftlicher Sicht nicht ausreichend ist, um ein vollständiges Bild von der Zusammenarbeit mit Familien erfassen zu können. Außerdem stellen die Items der Subskala "`Zusammenarbeit mit Familien"' vor allem diejenigen Aspekte dar, die für die gelungene Erziehungs- und Bildungspartnerschaft aus der Sicht des Trägers relevant sind. Nicht immer sind diese Aspekte für die Eltern von gleich großer Bedeutung. Es bedarf daher noch weiterer umfassender wissenschaftlicher Untersuchungen mit einem größeren Spektrum an differenzierten Fragen sowie der Durchführung von Evaluationen (z.B. teilnehmende Beobachtung und Interviews mit den Eltern), um eindeutige und aussagekräftige Schlüsse über die elterlichen Erwartungen, Bedürfnisse und Anforderungen in Bezug auf die Zusammenarbeit mit Familien in den FRÖBEL-Kindertageseinrichtungen sowie über die Qualität der Zusammenarbeit mit Eltern ziehen zu können. 
 	
-	In zukünftigen Befragungen könnten zum Beispiel solche Aspekte wie Lebenssituation,  Bildungs- und Familienstand sowie Migrationshintergrund der Eltern berücksichtigt werden, da diese Aspekte für die Einrichtungen eine große Rolle bei der Planung, Gestaltung und Durchführung der Zusammenarbeit mit Eltern spielen. Dies würde zudem ermöglichen, die Befragungsergebnisse der Eltern besser relativieren zu können. 
-	
+	In zukünftigen Befragungen könnten zum Beispiel solche Aspekte wie Lebenssituation, Bildungs- und Familienstand sowie Migrationshintergrund der Eltern berücksichtigt werden, da diese Aspekte für die Einrichtungen eine große Rolle bei der Planung, Gestaltung und Durchführung der Zusammenarbeit mit Eltern spielen. Dies würde zudem ermöglichen, die Befragungsergebnisse der Eltern besser relativieren zu können. 
+
 	Abschließend kann festgehalten werden, dass die vorwiegend positive Bewertung der Zusammenarbeit innerhalb der Befragung eine Bestätigung der erfolgreichen Arbeit der FRÖBEL-Einrichtungen im Bereich der Bildungs- und Erziehungspartnerschaft mit den Eltern bietet. Die durchgeführte Befragung des Trägers zeigt seine Bereitschaft, Feedback anzunehmen und sich stetig weiter zu entwickeln. Diese Bereitschaft sollte unterstützt und wissenschaftlich weiter begleitet werden. Denn obschon das Thema "`Erziehungs- und Bildungspartnerschaft"' zwischen Familien und Kindertageseinrichtungen inzwischen öffentlich diskutiert wird, gibt es nach wie vor viele Einrichtungen, die den Eltern in ihrer Mitbestimmung wenig Bedeutung und Raum zugestehen. Dabei sollte man nicht aus den Augen verlieren, dass die Eltern die Experten ihrer Kinder und gerade in den ersten Lebensjahren des Kindes seine engsten Bezugspersonen sind. Ein solches Umfrageergebnis ist ein erster Schritt hin zu einer objektiven Bewertung durch die Eltern, aber auch für die Eltern.
 	
-%\cite{bortz_forschungsmethoden_2006}     
+
+\pagebreak	 
 
 
 \printbibliography
