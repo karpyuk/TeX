@@ -686,7 +686,7 @@
 			<bib_volume></bib_volume>
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
-			<bib_year></bib_year>
+			<bib_year>o.J.</bib_year>
 			<bib_extra key="howpublished">Zuletzt abgerufen am 22.07.2014 unter \url{http://www.sozialgesetzbuch-sgb.de/sgbviii/1.html}</bib_extra>
 		</doc>
 		<doc>
@@ -737,6 +737,21 @@
 			<bib_extra key="booktitle">Kindertagesbetreuung in Deutschland. Bilanzen und Perspektiven </bib_extra>
 			<bib_extra key="editor">D. Sturzbecher</bib_extra>
 			<bib_extra key="publisher">Freiburg im Breisgau: Lambertus</bib_extra>
+		</doc>
+		<doc>
+			<filename></filename>
+			<key>Textor_oJ</key>
+			<notes></notes>
+			<bib_type>misc</bib_type>
+			<bib_doi></bib_doi>
+			<bib_title>Erziehungspartnerschaft - Bildungspartnerschaft: Plädoyer für eine intensive Zusammenarbeit von Eltern und Pädagog/innen</bib_title>
+			<bib_authors>Textror, M. R. </bib_authors>
+			<bib_journal></bib_journal>
+			<bib_volume></bib_volume>
+			<bib_number></bib_number>
+			<bib_pages></bib_pages>
+			<bib_year>o.J.</bib_year>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 17.06.2014 unter \url{http://www.ipzf.de/Erziehungspartnerschaft_Bildungspartnerschaft.html}</bib_extra>
 		</doc>
 	</doclist>
 </library>
