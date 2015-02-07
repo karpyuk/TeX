@@ -14,6 +14,12 @@
 \usepackage{tabularx}
 \usepackage{flafter}
 \usepackage{ellipsis}
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\scriptsize,%\footnotesize,        % the size of the fonts that are used for the code
+  breaklines=true                 % sets automatic line breaking
+}
 
 %\usepackage{apager}
 \usepackage[style=apa,bibstyle=apa,backend=biber]{biblatex}
@@ -863,8 +869,9 @@ Der geschichtliche Rückblick auf die Entwicklung der Zusammenarbeit mit Familie
 \begin{appendix}
 \section*{Anhang}
 \addcontentsline{toc}{section}{Anhang}
-\normalsize
-\section{}
+%\normalsize
+
+\include{Anhang_R}
 \end{appendix}
   
 \end{document}
