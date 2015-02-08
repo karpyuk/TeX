@@ -192,7 +192,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year> 2013</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 22.07.2014 unter \url{http://www.gew.de/Binaries/Binary96129/Expertise_Gute_Bildung_2013.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 22.07.2014 unter \href{http://www.gew.de/Binaries/Binary96129/Expertise_Gute_Bildung_2013.pdf}{gew.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -207,7 +207,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2009</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 22.07.2014 unter \url{http://www.gew.de/Binaries/Binary47887/expertise_gute_betreuung_web.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 22.07.2014 unter \href{http://www.gew.de/Binaries/Binary47887/expertise_gute_betreuung_web.pdf}{gew.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -300,7 +300,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2004</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 28.07.2014 unter \url{http://eprints.ioe.ac.uk/5309/1/sylva2004EPPEfinal.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 28.07.2014 unter \href{http://eprints.ioe.ac.uk/5309/1/sylva2004EPPEfinal.pdf}{eprints.ioe.ac.uk}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -410,7 +410,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2013</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 13.08.2014 unter \url{http://www.svr-migration.de/wp-content/uploads/2014/03/SVR_FB_Huerdenlauf-zur-Kita_Web.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 13.08.2014 unter \href{http://www.svr-migration.de/wp-content/uploads/2014/03/SVR_FB_Huerdenlauf-zur-Kita_Web.pdf}{svr-migration.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -419,14 +419,13 @@
 			<bib_type>misc</bib_type>
 			<bib_doi></bib_doi>
 			<bib_title>Gesunde kitas · starke kinder. Ganzheitliche Gesundheits- und Bildungsförderung in KiTas</bib_title>
-			<bib_authors></bib_authors>
+			<bib_authors>{Plattform Ernährung und Bewegung e. V. (Hrsg.)}</bib_authors>
 			<bib_journal></bib_journal>
 			<bib_volume></bib_volume>
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2007</bib_year>
-			<bib_extra key="editor">{Plattform Ernährung und Bewegung e. V. [peb]}</bib_extra>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 6.08.2014 unter \url{http://peb.hehosting.de/uploads/tx_ernaehrungundbewegung/peb_KiTa_Arbeitshilfe_Screenversion.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 6.08.2014 unter \href{ http://pebonline.de/uploads/tx_ernaehrungundbewegung/peb_KiTa_Arbeitshilfe_Screenversion.pdf}{pebonline.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -441,7 +440,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2010</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 23.04.2014 unter \url{http://www.weiterbildungsinitiative.de/uploads/media/WiFF_Expertise_7_Froehlich-Gildhoff.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 23.04.2014 unter \href{http://www.weiterbildungsinitiative.de/uploads/media/WiFF_Expertise_7_Froehlich-Gildhoff.pdf}{weiterbildungsinitiative.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -470,7 +469,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2000</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 6.08.2014 unter \url{http://www.oecd.org/finland/2476019.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 6.08.2014 unter \href{http://www.oecd.org/finland/2476019.pdf}{oecd.org}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -485,7 +484,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2007</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am  28.07.2014 unter \url{http://www.ifb.bayern.de/imperia/md/content/stmas/ifb/materialien/mat_2007_5.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am  28.07.2014 unter \href{http://www.ifb.bayern.de/imperia/md/content/stmas/ifb/materialien/mat_2007_5.pdf}{ifb.bayern.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -515,7 +514,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2014</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 27.07.2014 unter \url{http://www.froebel-gruppe.de/fileadmin/user/Dokumente/Broschueren/FROEBEL_Rahmenkonzeption_Mai_2014_A4_RZ_140620.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 27.07.2014 unter \href{http://www.froebel-gruppe.de/fileadmin/user/Dokumente/Broschueren/FROEBEL_Rahmenkonzeption_Mai_2014_A4_RZ_140620.pdf}{froebel-gruppe.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -624,7 +623,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2008</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 14.06.2014 unter \url{http://www.kas.de/upload/dokumente/2008/02/080227_henry.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 14.06.2014 unter \href{http://www.kas.de/upload/dokumente/2008/02/080227_henry.pdf}{kas.de}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
@@ -718,7 +717,7 @@
 			<bib_number></bib_number>
 			<bib_pages></bib_pages>
 			<bib_year>2011</bib_year>
-			<bib_extra key="howpublished">Zuletzt abgerufen am 18.08.2014 unter \url{http://www.highscope.org/file/Research/PerryProject/specialsummary_rev2011_02_2.pdf}</bib_extra>
+			<bib_extra key="howpublished">Zuletzt abgerufen am 18.08.2014 unter \href{http://www.highscope.org/file/Research/PerryProject/specialsummary_rev2011_02_2.pdf}{highscope.org}</bib_extra>
 		</doc>
 		<doc>
 			<filename></filename>
