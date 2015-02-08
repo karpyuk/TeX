@@ -1,0 +1,18 @@
+\section{Chronbach's Alpha}
+\label{E}
+
+\begin{lstlisting} [language=R]
+> reliability(mydata)
+
+$ nItem         : int 19
+$ nPerson       : int 2579
+$ alpha         : num 0.899
+
+> reliability(mydata[1:19])$alphaIfDeleted
+> round(reliability(mydata[1:19])$alphaIfDeleted,3)
+
+[1] 0.894 0.895 0.895 0.894 0.892 0.895 0.892 0.892 0.896 0.892 0.900 0.897
+[13] 0.892 0.893 0.894 0.892 0.893 0.893 0.894
+
+
+\end{lstlisting}
